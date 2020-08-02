@@ -9,7 +9,7 @@
 
 <br>
 
-<% if current_user.role == "owner" || current_user.role = "admin" %>
+<% if current_user.role == "owner"  %>
   <%= link_to "Crear Shop",  new_shop_path %>
 <% end %>
 
