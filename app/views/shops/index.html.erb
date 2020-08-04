@@ -1,2 +1,15 @@
 <h1>Shops#index</h1>
 <p>Find me in app/views/shops/index.html.erb</p>
+
+<% @shops.each do |shop| %>
+<ul>
+  <li><%= link_to shop.name, shop_path(shop.id) %> </li>
+</ul>
+<% end %>
+
+<br>
+
+<% if current_user.role == "owner" || current_user.role = "admin" %>
+  <%= link_to "Crear Shop",  new_shop_path %>
+<% end %>
+
