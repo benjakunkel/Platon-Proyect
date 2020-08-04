@@ -1,0 +1,12 @@
+<h1>Products#show</h1>
+<p>Find me in app/views/products/show.html.erb</p>
+<%= @product.name %>
+<%= @product.description %>
+<%= @product.unit_price %>
+
+
+<% if current_user.id == @shop.user_id || current_user.role == "admin" %>
+<%= link_to "Editar producto", edit_shop_product_path(@shop,@product)%>
+<br>
+<%= link_to "ELIMINAR producto", shop_product_path(@shop, @product), method: :delete %>
+<% end %>

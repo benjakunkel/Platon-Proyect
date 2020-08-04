@@ -4,7 +4,19 @@
 <%= @shop.address  %>
 <%= @shop.email  %>
 
-<% if current_user.id == @shop.user_id || current_user.role = "admin" %>
+
+<h1>productos</h1>
+
+<% @products.each do |product| %>
+<ul>
+  <li><%= link_to product.name, shop_product_path(@shop.id,product.id) %> </li> 
+</ul>
+<% end %>
+
+
+<% if current_user.id == @shop.user_id || current_user.role == "admin" %>
+<br>
+<%= link_to "Agregar producto", new_shop_product_path(@shop.id)  %>
 <br>
 <%= link_to "Editar Local", edit_shop_path(@shop.id)  %>
 <br>
