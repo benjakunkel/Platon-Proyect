@@ -1,5 +1,5 @@
 class ShopsController < ApplicationController
- 
+
   def index
       @shops = policy_scope(Shop)
   end
