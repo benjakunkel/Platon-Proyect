@@ -1,2 +1,12 @@
 <h1>Shops#show</h1>
 <p>Find me in app/views/shops/show.html.erb</p>
+<%= @shop.name  %>
+<%= @shop.address  %>
+<%= @shop.email  %>
+
+<% if current_user.id == @shop.user_id || current_user.role = "admin" %>
+<br>
+<%= link_to "Editar Local", edit_shop_path(@shop.id)  %>
+<br>
+<%= link_to "Eliminar Local", shop_path(@shop.id), method: :delete  %>
+<% end %>
