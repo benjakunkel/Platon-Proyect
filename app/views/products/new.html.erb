@@ -3,8 +3,9 @@
 
 <%= simple_form_for [@shop, @product] do |f| %>
 <%= f.input :name, label:"Nombre:", required: false %>
-<%= f.input :description, label:"Descripcion:", required: false %>	 
-<%= f.input :unit_price, label:"Precio unitario:", required: false %>
+<%= f.input :description, label:"Descripcion:", required: false %>
+<%= f.input :previous_price, label:"Precio anterior:", required: false %>	 
+<%= f.input :unit_price, label:"Precio actual:", required: false %>
 <%= f.input :photo, as: :file, label:"Agregá una imagen:", required: false %>
 <%= f.button :submit, label:"Agregar", class: "btn btn-outline-dark" %>
 <% end %>
