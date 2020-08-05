@@ -19,6 +19,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  &:hover {
+    color:red;
+  }
 }
 
 .price {
@@ -41,10 +44,15 @@
 }
 
 .card_product{
+    text-decoration: none !important;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+    color:unset;
     border-radius: 8px;
     h4 {
       font-size: 20px;
+    }
+    &:hover {
+      color:unset;
     }
 }
 
