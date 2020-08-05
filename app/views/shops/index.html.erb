@@ -4,7 +4,7 @@
     <div class="cards_index">
       <% @shops.each do |shop| %>
       <%= link_to shop_path(shop) do %>
-      <div class="card_product text-decoration-none">
+      <div class="card_product_index">
         <div class="card-img-top position-relative">
           <div class="heart">
             <i class="fas fa-heart"></i>
@@ -31,7 +31,7 @@
     <h1 class="text-center pb-3">Destacados</h1>
     <div class="cards_index">
       <% @shops.each do |shop| %>
-      <div class="card_product">
+      <div class="card_product_index">
         <div class="card-img-top position-relative">
           <div class="heart">
             <i class="fas fa-heart"></i>
@@ -57,7 +57,7 @@
     <h1 class="text-center pb-3">Tus favoritos</h1>
     <div class="cards_index">
       <% @shops.each do |shop| %>
-      <div class="card_product">
+      <div class="card_product_index">
         <div class="card-img-top position-relative">
           <div class="heart">
             <i class="fas fa-heart"></i>
