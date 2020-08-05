@@ -5,4 +5,5 @@ class Shop < ApplicationRecord
   validates :address, uniqueness: true, presence: true
   validates :phone_number, uniqueness: true, presence: true
   validates :email, uniqueness: true, presence: true
+  has_one_attached :photo
 end
