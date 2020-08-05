@@ -44,7 +44,7 @@
 <div class="bg-white">
   <div class="container p-4">
   <h1 class="text-center">Restaurants destacados</h1>
-    <div class="cards">
+    <div class="cards d-flex justify-content-center">
       <% @shops.each do |shop| %>
       <%= link_to shop_path(shop), class:"card_product" do %>
 
