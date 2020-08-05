@@ -1,30 +1,81 @@
 <%= render 'shared/banner' %>
-<div class="container">
-  <h1 class="text-center">Cerca tuyo</h1>
-  <ul>
-    <div class="cards">
+  <div class="wrapper_index">
+    <h1 class="text-center">Cerca tuyo</h1>
+    <div class="cards_index">
       <% @shops.each do |shop| %>
-          <li>
-            <div class="card_product"> 
-                <div class="card-img-top position-relative">
-                  <div class="heart">
-                    <i class="fas fa-heart"></i>
-                  </div>
-                  <%= cl_image_tag("mojito_baggco", height:300, width:300, crop: :fill) %>
-                </div>
-                <div class="p-3">
-                  <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                  </div>
-                  <h4><%= link_to shop.name, shop_path(shop) %> </h4>
-                  <p class="small m-0"><%=shop.address %></p>
-              </div>     
-          </li>
+      <%= link_to shop_path(shop) do %>
+      <div class="card_product">
+        <div class="card-img-top position-relative">
+          <div class="heart">
+            <i class="fas fa-heart"></i>
+          </div>
+          <%= cl_image_tag("mojito_baggco", height:300, width:300, crop: :fill) %>
+        </div>
+        <div class="p-3">
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <h4><%= link_to shop.name, shop_path(shop) %> </h4>
+          <p class="small m-0"><%=shop.address %></p>
+        </div>
+      </div>
+      <% end %>
       <% end %>
     </div>
-  </ul>
-</div>
+  </div>
+  <div class="wrapper_index_grey">
+    <h1 class="text-center">Destacados</h1>
+    <div class="cards_index">
+      <% @shops.each do |shop| %>
+      <div class="card_product">
+        <div class="card-img-top position-relative">
+          <div class="heart">
+            <i class="fas fa-heart"></i>
+          </div>
+          <%= cl_image_tag("mojito_baggco", height:300, width:300, crop: :fill) %>
+        </div>
+        <div class="p-3">
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <h4><%= link_to shop.name, shop_path(shop) %> </h4>
+          <p class="small m-0"><%=shop.address %></p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="wrapper_index">
+    <h1 class="text-center">Tus favoritos</h1>
+    <div class="cards_index">
+      <% @shops.each do |shop| %>
+      <div class="card_product">
+        <div class="card-img-top position-relative">
+          <div class="heart">
+            <i class="fas fa-heart"></i>
+          </div>
+          <%= cl_image_tag("mojito_baggco", height:300, width:300, crop: :fill) %>
+        </div>
+        <div class="p-3">
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <h4><%= link_to shop.name, shop_path(shop) %> </h4>
+          <p class="small m-0"><%=shop.address %></p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>

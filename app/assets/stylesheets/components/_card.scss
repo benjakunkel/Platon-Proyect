@@ -47,11 +47,25 @@
       font-size: 20px;
     }
 }
+.card_product:hover{
+  background-color: red;
+  text-decoration: none;
+}
 
 .cards {
   display: grid;
   grid-gap: 12px;
   grid-template-columns: 1fr 1fr;
+}
+
+.cards_index{
+    display: flex;
+    grid-gap: 12px;
+    white-space: nowrap;
+    overflow-x: scroll;
+    .card_product{
+      margin: 0px 6px;
+    }
 }
 
 
@@ -62,5 +76,9 @@
   }
   .card-img-top img {
     height: 250px;
-}
+  }
+  .cards_index{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 32px;
+  }
 }
