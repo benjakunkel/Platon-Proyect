@@ -1,17 +1,48 @@
-<h1>Shops#show</h1>
-<p>Find me in app/views/shops/show.html.erb</p>
-<%= @shop.name  %>
-<%= @shop.address  %>
-<%= @shop.email  %>
-
-
-<h1>productos</h1>
-
-<% @products.each do |product| %>
-<ul>
-  <li><%= link_to product.name, shop_product_path(@shop.id,product.id) %> </li> 
-</ul>
+<% if @shop.photo.attached? %>
+  <div class="banner mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=cl_image_path @shop.photo.key %>)">
+    <div class="container">
+      <h1 class="text-center"><%= @shop.name %></h1>
+      <p class="text-center"><%= @shop.address %></p>
+    </div>
+  </div>  
+<% else %>
+  <div class="banner mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=cl_image_path "nodisponible" %>)">
+    <div class="container">
+      <h1 class="text-center"><%= @shop.name %></h1>
+      <p class="text-center"><%= @shop.address %></p>
+    </div>
+  </div>
 <% end %>
+
+<div class="container">
+  <div class="cards">
+    <% @products.each do |product| %>
+      <%= link_to shop_product_path(@shop.id,product.id), class:"card_product" do %>
+        <div>
+          <div class="card-img-top position-relative">
+            <%= cl_image_tag product.photo.key, height:300, width:300, crop: :fill %>
+            <div class="price">
+              <p class="m-0"><%= product.unit_price * 2 %></p>
+              <div class="offer">
+                <h6><%= product.unit_price %></h6>
+              </div>
+            </div>
+          </div>  
+          <div class="p-3">
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <h4 class="pt-2"><%= product.name %></h4>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
 
 
 <% if current_user.id == @shop.user_id || current_user.role == "admin" %>
@@ -22,3 +53,12 @@
 <br>
 <%= link_to "Eliminar Local", shop_path(@shop.id), method: :delete  %>
 <% end %>
+
+
+
+<% if @shop.photo.attached? %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=cl_image_path @shop.photo.key %>)">
+<% else %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://thumbs.dreamstime.com/b/limpie-el-garage-19656222.jpg)">
+<% end %>
+
