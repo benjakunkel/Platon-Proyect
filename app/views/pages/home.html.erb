@@ -52,7 +52,11 @@
           <div class="heart">
             <i class="fas fa-heart"></i>
           </div>
-          <%= cl_image_tag("mojito_baggco", height:300, width:300, crop: :fill) %>
+          <% if shop.photo.attached? %>
+              <%= cl_image_tag shop.photo.key, height:300, width:300, crop: :fill %>
+          <% else %>
+            <%= cl_image_tag("mojito_baggco", height:300, width:300, crop: :fill) %>
+          <% end %>
         </div>
         <div class="p-3">
           <div class="rating">
@@ -80,6 +84,10 @@
 <h1 class="text-center">Nuestra Misión</h1>
 <p class="text-center">En la Argentina se desechan 16 millones de toneladas de alimentos por año, equivalente al 12.5% de todos los alimentos que se producen en el país.El planeta nos pide a gritos que comencemos a cuidarlo y sabemos que todos estamos tomando conciencia de ésto. Nosotros decidimos aportar nuestro granito de arena en la lucha contra el desperdicio de alimento. Podes unirte a nuestra lucha y disfrutar de nuestros super descuentos </p>
 </div>
+
+
+
+
 
 
 

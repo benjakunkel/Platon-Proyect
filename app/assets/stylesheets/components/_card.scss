@@ -2,10 +2,12 @@
   width: 100%;
   object-fit: cover;
   height: 150px;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
 }
 .rating{
-  color:yellow;
-  font-size: 10px;
+  color:#FED559;
+  font-size: 16px;
 }
 .heart {
   position: absolute;
@@ -44,8 +46,9 @@
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
     color:unset;
     border-radius: 8px;
-    margin: 12px;
-
+    margin: 8px;
+    min-width: 170px;
+    max-width: 170px;
     h4 {
       font-size: 16px;
     }
@@ -58,7 +61,7 @@
 }
 .cards {
   display: grid;
-  grid-gap: 12px;
+  grid-gap: 6px;
   grid-template-columns: 1fr 1fr;
 }
 @media (min-width: 768px) {
@@ -70,7 +73,9 @@
   }
   .card-img-top img {
     height: 250px;
-}
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    }
 .card_product{
   h4{
     font-size: 24px;
@@ -78,5 +83,7 @@
   p{
     font-size: 16px;
   }
+  min-width: 320px;
+  max-width: 30px;
 }
 }

@@ -1,21 +1,21 @@
 class ShopsController < ApplicationController
- 
+skip_before_action :authenticate_user!, only: [ :index ]
+
   def index
       @shops = policy_scope(Shop)
-      @shops = Shop.all
   end
 
   def show
     @shop = Shop.find(params[:id])
-    @products = Product.where(shop_id: @shop.id)
     authorize @shop
+    @products = Product.where(shop_id: @shop.id)
   end
 
   def new
     @shop = Shop.new
     authorize @shop
   end
-  
+
   def create
     @shop = Shop.new(shop_params)
     if @shop.save
@@ -33,7 +33,6 @@ class ShopsController < ApplicationController
     authorize @shop
   end
 
- 
   def update
   @shop = Shop.find(params[:id])
     if @shop.update_attributes(shop_params)

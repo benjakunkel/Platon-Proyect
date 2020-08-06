@@ -1,14 +1,17 @@
 class ShopPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.where(user_id: user.id)
-    end 
+      scope.all
+    end
+  end
+  def index?
+    return true
   end
 
   def show?
-    return true
+   true
   end
-  
+
   def new?
     user.owner?
   end
@@ -16,7 +19,7 @@ class ShopPolicy < ApplicationPolicy
   def create?
     new?
   end
-  
+
   def update?
     record.user == user
     # - record: the restaurant passed to the `authorize` method in controller
@@ -26,7 +29,4 @@ class ShopPolicy < ApplicationPolicy
   def destroy?
     user == record.user #pregunta si el usuario que esta intentando deletear es el mismo usuario que creo el shop
   end
-
-  
-
 end
