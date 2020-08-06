@@ -7,8 +7,8 @@ skip_before_action :authenticate_user!, only: [ :index ]
 
   def show
     @shop = Shop.find(params[:id])
-    @products = Product.where(shop_id: @shop.id)
     authorize @shop
+    @products = Product.where(shop_id: @shop.id)
   end
 
   def new
