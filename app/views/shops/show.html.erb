@@ -57,8 +57,12 @@
 
 
 <% if @shop.photo.attached? %>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=cl_image_path @shop.photo.key %>)">
-<% else %>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://thumbs.dreamstime.com/b/limpie-el-garage-19656222.jpg)">
+    <div  
+      class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0. 3)), url(<%=cl_image_path @shop.photo.key %>)"> 
+    </div>
+  <% else %>
+    <div 
+      class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://thumbs.dreamstime.com/b/limpie-el-garage-19656222.jpg)"> 
+    </div>
 <% end %>
 
