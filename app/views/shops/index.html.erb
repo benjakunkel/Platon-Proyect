@@ -10,7 +10,11 @@
                 <div class="heart">
                   <i class="fas fa-heart"></i>
                 </div>
-                <%= cl_image_tag("mojito_baggco", height:300, width:300, crop: :fill) %>
+                 <% if shop.photo.attached? %>
+                  <%= cl_image_tag shop.photo.key, height:300, width:300, crop: :fill %>
+                <% else %>
+                  <%= cl_image_tag("mojito_baggco", height:300, width:300, crop: :fill) %>
+                <% end %>
               </div>
               <div class="p-3">
                 <div class="rating">
@@ -38,7 +42,11 @@
                 <div class="heart">
                   <i class="fas fa-heart"></i>
                 </div>
-                <%= cl_image_tag("mojito_baggco", height:300, width:300, crop: :fill) %>
+                 <% if shop.photo.attached? %>
+                  <%= cl_image_tag shop.photo.key, height:300, width:300, crop: :fill %>
+                <% else %>
+                  <%= cl_image_tag("mojito_baggco", height:300, width:300, crop: :fill) %>
+                <% end %>
               </div>
               <div class="p-3">
                 <div class="rating">
@@ -66,7 +74,11 @@
                 <div class="heart">
                   <i class="fas fa-heart"></i>
                 </div>
-                <%= cl_image_tag("mojito_baggco", height:300, width:300, crop: :fill) %>
+                <% if shop.photo.attached? %>
+                  <%= cl_image_tag shop.photo.key, height:300, width:300, crop: :fill %>
+                <% else %>
+                  <%= cl_image_tag("mojito_baggco", height:300, width:300, crop: :fill) %>
+                <% end %>
               </div>
               <div class="p-3">
                 <div class="rating">
