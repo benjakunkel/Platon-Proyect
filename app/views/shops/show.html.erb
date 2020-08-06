@@ -22,9 +22,9 @@
           <div class="card-img-top position-relative">
             <%= cl_image_tag product.photo.key, height:300, width:300, crop: :fill %>
             <div class="price">
-              <p class="m-0"><%= product.previous_price %></p>
+              <p class="m-0"> $ <%= product.previous_price %></p>
               <div class="offer">
-                <h6><%= product.unit_price %></h6>
+                <h6>$<%= product.unit_price %></h6>
               </div>
             </div>
           </div>
@@ -57,8 +57,12 @@
 
 
 <% if @shop.photo.attached? %>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=cl_image_path @shop.photo.key %>)">
-<% else %>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://thumbs.dreamstime.com/b/limpie-el-garage-19656222.jpg)">
+    <div  
+      class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0. 3)), url(<%=cl_image_path @shop.photo.key %>)"> 
+    </div>
+  <% else %>
+    <div 
+      class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://thumbs.dreamstime.com/b/limpie-el-garage-19656222.jpg)"> 
+    </div>
 <% end %>
 
