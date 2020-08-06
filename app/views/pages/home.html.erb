@@ -19,7 +19,7 @@
         <div class="d-flex justify-content-center">
           <%= cl_image_tag("elegi", height:100, width:100, crop: :fill, class:"mt-4") %>
         </div>
-        <div>  
+        <div>
           <h4 class="mt-4 text-center">2.Elegí</h4>
           <small>Elegí tus platos favoritos</small>
         </div>
@@ -30,7 +30,7 @@
         <div class="d-flex justify-content-center">
           <%= cl_image_tag("shop", height:100, width:100, crop: :fill, class:"mt-4") %>
         </div>
-        <div> 
+        <div>
           <h4 class="mt-4 text-center">3.Retirá</h4>
           <small>Disfrutá de la mejor comida al mejor precio</small>
         </div>
@@ -46,8 +46,8 @@
   <h1 class="text-center">Restaurants destacados</h1>
     <div class="cards d-flex justify-content-center">
       <% @shops.each do |shop| %>
-      <%= link_to shop_path(shop), class:"card_product" do %> 
-      
+      <%= link_to shop_path(shop), class:"card_product" do %>
+
         <div class="card-img-top position-relative">
           <div class="heart">
             <i class="fas fa-heart"></i>
@@ -66,8 +66,8 @@
           <p class="small m-0"><%= shop.address %></p>
         </div>
       <% end %>
-      <% end %>   
-  
+      <% end %>
+
     </div>
     <div class="text-center p-4">
       <%= link_to "Ver más", shops_path,  class:"btn btn-lg btn-primary rounded"%>
@@ -80,6 +80,6 @@
 <h1 class="text-center">Nuestra Misión</h1>
 <p class="text-center">Un tercio de la comida que se produce a nivel mundial acaba directamente en la basura. Pero no solo se desperdicia la comida, sino todos los recursos y procesos que se han invertido para producirla, desde el agua hasta el terreno y el trabajo desarrollado. Cuando la comida se tira, el proceso de gestión de estos residuos tiene un efecto dañino en el medio ambiente: ¡esta gestión es responsable del 8% de las emisiones globales de gases de efecto invernadero! Algo nada saludable para nuestro planeta.</p>
 </div>
-  
+
 
 
