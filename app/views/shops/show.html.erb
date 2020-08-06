@@ -17,7 +17,7 @@
 <div class="container">
   <div class="cards">
     <% @products.each do |product| %>
-      <%= link_to shop_product_path(@shop.id,product.id), class:"card_product" do %>
+      <%= link_to shop_product_path(@shop.id, product.id), class:"card_product" do %>
         <div>
           <div class="card-img-top position-relative">
             <%= cl_image_tag product.photo.key, height:300, width:300, crop: :fill %>
@@ -38,6 +38,7 @@
             </div>
             <h4 class="pt-2"><%= product.name %></h4>
           </div>
+          <%= link_to "Agregar al Carrito", product_cart_items_path(product), method: :POST, class:"btn btn-lg btn-primary rounded"%>
         </div>
       <% end %>
     <% end %>
@@ -46,12 +47,12 @@
 
 
 <% if current_user.id == @shop.user_id || current_user.role == "admin" %>
-<br>
-<%= link_to "Agregar producto", new_shop_product_path(@shop.id)  %>
-<br>
-<%= link_to "Editar Local", edit_shop_path(@shop.id)  %>
-<br>
-<%= link_to "Eliminar Local", shop_path(@shop.id), method: :delete  %>
+  <br>
+  <%= link_to "Agregar producto", new_shop_product_path(@shop.id)  %>
+  <br>
+  <%= link_to "Editar Local", edit_shop_path(@shop.id)  %>
+  <br>
+  <%= link_to "Eliminar Local", shop_path(@shop.id), method: :delete  %>
 <% end %>
 
 

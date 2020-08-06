@@ -12,7 +12,7 @@ class ShopPolicy < ApplicationPolicy
   def new?
     user.owner?
   end
-
+  
   def create?
     new?
   end
