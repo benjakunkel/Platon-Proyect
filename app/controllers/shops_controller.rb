@@ -1,8 +1,7 @@
 class ShopsController < ApplicationController
- 
+
   def index
       @shops = policy_scope(Shop)
-      @shops = Shop.all
   end
 
   def show
@@ -15,7 +14,7 @@ class ShopsController < ApplicationController
     @shop = Shop.new
     authorize @shop
   end
-  
+
   def create
     @shop = Shop.new(shop_params)
     if @shop.save
@@ -33,7 +32,7 @@ class ShopsController < ApplicationController
     authorize @shop
   end
 
- 
+
   def update
   @shop = Shop.find(params[:id])
     if @shop.update_attributes(shop_params)

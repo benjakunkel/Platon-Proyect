@@ -8,7 +8,7 @@
 
 puts "Destruyendo base de datos actual..."
 puts "...."
-  
+
   Shop.delete_all
   User.delete_all
   #Product.destroy_all
@@ -20,13 +20,13 @@ puts "-------------------------------------"
 puts  "Comenzando la creacion de usuarios"
 
 puts "Creando Owner"
-owner = User.create(email:"owner@gmail.com", first_name:"Dueno", last_name:"Del local", password:"123456",phone_number:"12345687", address:"calle falsa 123", role: "owner")
+owner = User.create(email:"owner@gmail.com", first_name:"Dueno", last_name:"Del local", password:"123456",phone_number:"12345687", address:"Florida 840 CABA, Argentina", role: "owner")
 puts "Owner creado"
 
 puts "-------------------------------------"
 
 puts "Creando User normal"
-user = User.create(email:"user@gmail.com", first_name:"Usuario", last_name:"Normal", password:"123456",phone_number:"123452687", address:"calle falsa 1235", role: "user")
+user = User.create(email:"user@gmail.com", first_name:"Usuario", last_name:"Normal", password:"123456",phone_number:"123452687", address:"Estado de israel 827 Misiones, Argentina", role: "user")
 puts "Usuario normal creado"
 
 puts "-------------------------------------"

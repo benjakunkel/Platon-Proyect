@@ -24,8 +24,8 @@
                   <i class="far fa-star"></i>
                   <i class="far fa-star"></i>
                 </div>
-                <h4><%= shop.name %> </h4>
-                <p class="small m-0"><%=shop.address %></p>
+                <h4 class="d-flex justify-content-center"><%= shop.name %> </h4>
+                <p class="small m-0 d-flex flex-row-reverse bd-highlight"><i class="fas fa-utensils" id="icono_localizacion"></i></i><%=shop.distance_from(current_user) %></p>
               </div>
             </div>
           <% end %>
