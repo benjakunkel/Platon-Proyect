@@ -36,6 +36,30 @@ ActiveRecord::Schema.define(version: 2020_08_06_183219) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "cart_items", force: :cascade do |t|
+    t.integer "quantity"
+    t.integer "subtotal_price"
+    t.bigint "cart_id", null: false
+    t.bigint "product_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cart_id"], name: "index_cart_items_on_cart_id"
+    t.index ["product_id"], name: "index_cart_items_on_product_id"
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.integer "price"
+    t.text "description"
+    t.bigint "user_id", null: false
+    t.datetime "confirmed_at"
+    t.datetime "submited_at"
+    t.bigint "shop_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["shop_id"], name: "index_carts_on_shop_id"
+    t.index ["user_id"], name: "index_carts_on_user_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.bigint "shop_id", null: false
     t.string "name"
@@ -80,6 +104,10 @@ ActiveRecord::Schema.define(version: 2020_08_06_183219) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "cart_items", "carts"
+  add_foreign_key "cart_items", "products"
+  add_foreign_key "carts", "shops"
+  add_foreign_key "carts", "users"
   add_foreign_key "products", "shops"
   add_foreign_key "shops", "users"
 end

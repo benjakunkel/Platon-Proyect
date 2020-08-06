@@ -1,0 +1,24 @@
+<h1 class="text-center m-4">Mi Carrito</h1>
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Tu platón</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @cart.cart_items.each do |item| %>
+      <tr>
+        <th scope="row">1</th>
+        <td> <%= item.product.name %> </td>
+        <td><%= item.quantity %></td>
+        <td> $ <%= item.quantity*item.subtotal_price %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+

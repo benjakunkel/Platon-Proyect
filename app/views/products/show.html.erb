@@ -7,7 +7,7 @@
 
 
 <% if current_user.id == @shop.user_id || current_user.role == "admin" %>
-<%= link_to "Editar producto", edit_shop_product_path(@shop,@product)%>
+<%= link_to "Editar producto", edit_product_path(@product)%>
 <br>
-<%= link_to "ELIMINAR producto", shop_product_path(@shop, @product), method: :delete %>
+<%= link_to "ELIMINAR producto", shop_product_path(@product), method: :delete %>
 <% end %>

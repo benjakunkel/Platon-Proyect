@@ -38,10 +38,10 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     authorize @shop
     if @product.update_attributes(product_params)
-      flash[:success] = "De una perro"
+      flash[:success] = "Actualizado con exito"
       redirect_to shop_product_path(@shop,@product)
     else
-      flash[:error] = "mal ahi"
+      flash[:error] = "Error al Editar, pruebe nuevamente"
       render 'edit'
     end
   end
