@@ -4,7 +4,7 @@
   height: 150px;
 }
 .rating{
-  color:rgb(177, 151, 7);
+  color:#FED559;
   font-size: 16px;
 }
 .heart {
@@ -45,6 +45,8 @@
     color:unset;
     border-radius: 8px;
     margin: 12px;
+    min-width: 150px;
+    max-width: 150px;
 
     h4 {
       font-size: 16px;
