@@ -1,4 +1,5 @@
 class ShopsController < ApplicationController
+skip_before_action :authenticate_user!, only: [ :index ]
 
   def index
       @shops = policy_scope(Shop)
@@ -31,7 +32,6 @@ class ShopsController < ApplicationController
     @shop = Shop.find(params[:id])
     authorize @shop
   end
-
 
   def update
   @shop = Shop.find(params[:id])

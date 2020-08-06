@@ -26,13 +26,13 @@ puts "Owner creado"
 puts "-------------------------------------"
 
 puts "Creando User normal"
-user = User.create(email:"user@gmail.com", first_name:"Usuario", last_name:"Normal", password:"123456",phone_number:"123452687", address:"Estado de israel 827 Misiones, Argentina", role: "user")
+user = User.create(email:"user@gmail.com", first_name:"Usuario", last_name:"Normal", password:"123456",phone_number:"123452687", address:"Calle 43 771 La Plata, Argentina", role: "user")
 puts "Usuario normal creado"
 
 puts "-------------------------------------"
 
 puts "Creando Owner 2"
-owner2 = User.create(email:"owner2@gmail.com", first_name:"Dueno2", last_name:"Del local2", password:"123456",phone_number:"1222344445687", address:"calle falsa 12233", role: "owner")
+owner2 = User.create(email:"owner2@gmail.com", first_name:"Dueno2", last_name:"Del local2", password:"123456",phone_number:"1222344445687", address:"Estado de israel 827 Misiones, Argentina", role: "owner")
 puts "Owner2 creado"
 
 puts "-------------------------------------"

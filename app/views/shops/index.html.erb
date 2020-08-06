@@ -1,7 +1,10 @@
 <%= render 'shared/banner' %>
 <div class="bg-white">
+
+  <%# SI EL USER ESTA CONECTADO LE MUESTRO CERCA TUYO!!  %>
+  <% if user_signed_in? %>
     <div class="wrapper_index">
-      <h1 class="text-center pb-3">Cerca tuyo</h1>
+      <h4 class="text-center pb-2"> Cerca tuyo </h4>
       <div class="cards_index dragscroll">
         <% @shops.each do |shop| %>
           <%= link_to shop_path(shop) do %>
@@ -24,7 +27,7 @@
                   <i class="far fa-star"></i>
                   <i class="far fa-star"></i>
                 </div>
-                <h4 class="d-flex justify-content-center"><%= shop.name %> </h4>
+                <h4 class="mt-1 d-flex justify-content-center"><%= shop.name %> </h4>
                 <p class="small m-0 d-flex flex-row-reverse bd-highlight"><i class="fas fa-utensils" id="icono_localizacion"></i></i><%=shop.distance_from(current_user) %></p>
               </div>
             </div>
@@ -32,40 +35,9 @@
         <% end %>
       </div>
     </div>
+    <%# TUS FAVORITOS !!  %>
     <div class="wrapper_index">
-      <h1 class="text-center pb-3">Destacados</h1>
-      <div class="cards_index dragscroll">
-        <% @shops.each do |shop| %>
-          <%= link_to shop_path(shop) do %>
-            <div class="card_product_index">
-              <div class="card-img-top position-relative">
-                <div class="heart">
-                  <i class="fas fa-heart"></i>
-                </div>
-                 <% if shop.photo.attached? %>
-                  <%= cl_image_tag shop.photo.key, height:300, width:300, crop: :fill %>
-                <% else %>
-                  <%= cl_image_tag("mojito_baggco", height:300, width:300, crop: :fill) %>
-                <% end %>
-              </div>
-              <div class="p-3">
-                <div class="rating">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-                </div>
-                <h4><%= shop.name %> </h4>
-                <p class="small m-0"><%=shop.address %></p>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-    <div class="wrapper_index">
-      <h1 class="text-center pb-3">Tus favoritos</h1>
+      <h4 class="text-center pb-2">Tus favoritos</h4>
       <div class="cards_index dragscroll">
         <% @shops.each do |shop| %>
           <%= link_to shop_path(shop) do %>
@@ -96,4 +68,41 @@
         <% end %>
       </div>
     </div>
+  <% end %>
+
+
+    <%# DESTACADOS !! ( SE MUESTRA SIEMPRE) %>
+    <div class="wrapper_index">
+      <h4 class="text-center pb-2">Destacados</h4>
+      <div class="cards_index dragscroll">
+        <% @shops.each do |shop| %>
+          <%= link_to shop_path(shop) do %>
+            <div class="card_product_index">
+              <div class="card-img-top position-relative">
+                <div class="heart">
+                  <i class="fas fa-heart"></i>
+                </div>
+                 <% if shop.photo.attached? %>
+                  <%= cl_image_tag shop.photo.key, height:300, width:300, crop: :fill %>
+                <% else %>
+                  <%= cl_image_tag("mojito_baggco", height:300, width:300, crop: :fill) %>
+                <% end %>
+              </div>
+              <div class="p-3">
+                <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+                <h4><%= shop.name %> </h4>
+                <p class="small m-0"><%=shop.address %></p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
 </div>
