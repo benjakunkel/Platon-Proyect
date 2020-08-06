@@ -1,5 +1,7 @@
 class ShopsController < ApplicationController
- 
+  
+  skip_before_action :authenticate_user!, only: [ :index ]
+  
   def index
       @shops = policy_scope(Shop)
       @shops = Shop.all

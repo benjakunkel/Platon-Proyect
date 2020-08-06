@@ -14,12 +14,16 @@
     <ul class="navbar-nav mr-auto">
     <%# CUANDO EL USUARIO ESTA LOGEADO  %>
       <% if user_signed_in? %>
-        
-        <li class="nav-item active">
-          <i class="fas fa-search nav-link mt-1"></i>
+        <li class="nav-item active mr-2">
+          <%= link_to "#", class: "nav-link mr-2" do %>
+            <span class="carrito">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="number">2</span>
+            </span>
+          <% end %>
         </li>
         <li class="nav-item active">
-          <%= link_to "Inicio", "/shops", class: "nav-link" %>
+          <%= link_to "Inicio", "/shops", class: "nav-link mr-2" %>
         </li>
 
         <%# Si el user logeado es OWNER MOSTRA ESTO %>
