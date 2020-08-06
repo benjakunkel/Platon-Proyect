@@ -1,32 +1,69 @@
 .cards_index{
     display: flex;
-    grid-gap: 12px;
     white-space: nowrap;
     overflow-x: scroll;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    .card-img-top img {
+      border-top-right-radius: 8px;
+      border-top-left-radius: 8px;
+    }
     .card_product_index{
     text-decoration: none !important;
     box-shadow: 0 1px 15px rgba(0, 0, 0, 0.175);
-    color: unset;
     border-radius: 8px;
     margin: 12px;
+    min-width: 200px;
+    max-width: 200px;
     }
     a{
       text-decoration: none;
+      color: unset;
+      margin-right: 28px
     }
     a:hover{
-<<<<<<< HEAD
-      text-decoration;
-=======
       text-decoration: none;
->>>>>>> master
+      color: unset;
     }
     h4 {
       font-size: 20px;
     }
-    &:hover {
-      color: unset;
-    }
 }
+@media (min-width: 768px) {
+  .cards_index {
+
+      &::-webkit-scrollbar {
+      width: 20px;               /* width of the entire scrollbar */
+      }
+      &::-webkit-scrollbar-track {
+      background: white;        /* color of the tracking area */
+      }
+      &::-webkit-scrollbar-thumb {
+      background-color: white;    /* color of the scroll thumb */
+      border-radius: 2px;       /* roundness of the scroll thumb */
+      border: 1px solid white;  /* creates padding around scroll thumb */
+      }
+      .card-img-top img {
+        height: 250px;
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+    }
+    .card_product_index{
+      min-width: 300px;
+      max-width: 300px;
+      border-radius: 8px;
+
+      h4{
+        font-size: 24px;
+      }
+      p{
+        font-size: 16px;
+      }
+  }
+}
+}
+
 
   // .cards_index{
   //   grid-template-columns: 1fr 1fr 1fr;
