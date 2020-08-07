@@ -1,0 +1,9 @@
+#new-product{
+      height: 600px;
+}
+@media (min-width: 768px) {
+    #new-product{
+      max-width: 600px;
+
+    }
+}
