@@ -1,0 +1,15 @@
+
+  .container{
+   text-align: center;
+  }
+  .table-striped tbody tr:nth-of-type(odd){
+   background-color: rgb(237,245,245);
+  }
+  .table-hover tbody tr:hover{
+   background-color: #e5faf9;
+   color: rgb(112,24,78);
+  }
+  .thead-green{
+   background-color: #0A978E;
+   color: white;
+  }
