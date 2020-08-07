@@ -14,7 +14,6 @@ class CartItemsController < ApplicationController
     @cart.save!
     @cart_item.cart = @cart
     @cart_item.save!
-    redirect_to cart_path(@cart)
   end
 
   def update
