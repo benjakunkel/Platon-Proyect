@@ -4,7 +4,7 @@
   <%# SI EL USER ESTA CONECTADO LE MUESTRO CERCA TUYO!!  %>
   <% if user_signed_in? %>
     <div class="wrapper_index">
-      <h4 class="text-center pb-2"> Cerca tuyo </h4>
+      <h4 class="text-center pb-2"> Locales </h4>
       <div class="cards_index dragscroll">
         <% @shops.each do |shop| %>
           <%= link_to shop_path(shop) do %>
