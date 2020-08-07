@@ -9,7 +9,6 @@
   <div class="banner mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=cl_image_path "nodisponible" %>)">
     <div class="container">
       <h1 class="text-center"><%= @shop.name %></h1>
-      <p class="text-center"><%= @shop.address %></p>
     </div>
   </div>
 <% end %>
@@ -19,9 +18,8 @@
     <% @products.each do |product| %>
       <div class="card_product">
         <div>
-        <%= link_to shop_product_path(@shop.id, product.id), class:"card_product" do %>
           <div class="card-img-top position-relative">
-            <%= cl_image_tag product.photo.key, height:300, width:300, crop: :fill %>
+            <%= cl_image_tag product.photo.key, height:350, width:350, crop: :fill %>
             <div class="price">
               <p class="m-0"> $ <%= product.previous_price %></p>
               <div class="offer">
@@ -38,8 +36,7 @@
               <i class="far fa-star"></i>
             </div>
             <h4 class="pt-2"><%= product.name %></h4>
-    <% end %> 
-              <%# Cierra ahi porque no puede haber un link to dentro de un link to DO %>
+              <%# Cierra ahi porque no puede haber un link to dentro de un link to do %>
              <%= link_to "Agregar al Carrito", product_cart_items_path(product), method: :POST, class:"btn btn-primary rounded d-flex justify-content-center"%>
           </div>
         </div>

@@ -15,10 +15,12 @@
     <%# CUANDO EL USUARIO ESTA LOGEADO  %>
       <% if user_signed_in? %>
         <li class="nav-item active mr-2">
-          <%= link_to "#", class: "nav-link mr-2" do %>
+          <%= link_to cart_path(current_user.carts.last), class: "nav-link mr-2" do %>
             <span class="carrito">
               <i class="fas fa-shopping-cart"></i>
-              <span class="number">2</span>
+             <% if current_user.active_cart.has_items? %>
+              <span class="number"> <%= current_user.active_cart.number_of_items %> </span>
+            <% end %>
             </span>
           <% end %>
         </li>
