@@ -1,7 +1,7 @@
 <h1 class="text-center m-4">Mi Carrito</h1>
 <div class="container">
-  <table class="table table-striped">
-    <thead>
+  <table class="table table-striped table-hover">
+    <thead class="thead-green">
       <tr>
         <th scope="col">#</th>
         <th scope="col">Tu platón</th>
@@ -24,7 +24,11 @@
       <% end %>
     </tbody>
   </table>
-    <%= link_to "Realizar Compra", confirmation_path %>
+  <div class="text-center m-4 bg-red">
+    <h5>Su total es <strong> $<%=@cart.total%> </strong></h5>
+  </div>
+  <div class="text-center">
+    <%= link_to "  Realizar compra", confirmation_path,  class:"fas fa-shopping-cart btn btn-lg btn-primary rounded p-3"%>
+  </div>
 </div>
 
-<%=@cart.total%>
