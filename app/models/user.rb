@@ -7,4 +7,8 @@ class User < ApplicationRecord
   has_many :carts
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+  
+  def active_cart
+    carts.find_by(submited_at: nil)
+  end
 end

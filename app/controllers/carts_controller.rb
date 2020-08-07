@@ -9,6 +9,6 @@ class CartsController < ApplicationController
     @cart = Cart.find(params[:id])
     authorize @cart
     @cart.update(submited_at: Time.current)
-    redirect_to cart_path(@cart)
+    redirect_to confirmation_path
   end
 end

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
-  get '/pages/:confirmation', to: 'pages#confirmation'
+  get '/pages/confirmation', to: 'pages#confirmation', as: "confirmation"
   devise_for :users
   resources :shops do
     resources :products, only: [:new, :create, :show]
