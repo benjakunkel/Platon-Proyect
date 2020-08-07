@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "/shops", class: "navbar-brand" do %>
-  
+
   <%# Titulo (logo) %>
   <h4 class="mt-1 text-monospace"> <strong> PLATON </strong></h4>
     <% end %>
@@ -31,24 +31,24 @@
         <%# Si el user logeado es OWNER MOSTRA ESTO %>
         <% if current_user.role == "owner"  %>
         <li class="nav-item active">
-           <%= link_to "Agregar Productos", "#", class: "nav-link" %>
+           <%= link_to "Agregar Productos", new_shop_product_path(current_user.shop), class: "nav-link" %>
          </li>
         <% end %>
-  
+
         <%# DROPDOWN %>
         <li class="nav-item dropdown">
           <%= image_tag "https://www.pandaancha.mx/plds/articulos/4bf04095762666e2e6b288e55796834e585710389.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%# Si el user logeado es OWNER MOSTRA ESTO %>
             <% if current_user.role == "owner"  %>
-              <%= link_to "Crear Shop",  new_shop_path, class: "dropdown-item" %>
-              <%= link_to "Agregar Productos", "#", class: "dropdown-item" %>
+              <%= link_to "Crear Local",  new_shop_path, class: "dropdown-item" %>
+              <%= link_to "Agregar Productos", new_shop_product_path(current_user.shop), class: "dropdown-item" %>
             <% end %>
             <%# ESTO LO VEN TODOS LOS %>
             <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
-        
+
       <% else %> <%# CUANDO EL USUARIO NO ESTA LOGEADO  %>
         <li class="nav-item">
           <i class="fas fa-search nav-link mt-1"></i>
