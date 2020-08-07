@@ -6,7 +6,5 @@ class PagesController < ApplicationController
   end
 
   def confirmation
-    @cart = current_user.active_cart 
-    
   end
 end

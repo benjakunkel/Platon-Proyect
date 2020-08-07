@@ -12,7 +12,7 @@ class Shop < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   def distance_from(user)
-    if latitude.nil?
+    if latitude.blank? || longitude.blank?
       return ""
     else
       distance = self.distance_to([user.latitude, user.longitude])

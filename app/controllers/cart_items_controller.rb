@@ -2,6 +2,7 @@ class CartItemsController < ApplicationController
   
   def create
     @product = Product.find(params[:product_id])
+    @shop = @product.shop
     @cart_item = CartItem.new(product: @product, quantity: 1, subtotal_price: @product.unit_price)
     if current_user.carts.empty? || !current_user.carts.last.submited_at.nil?
       @cart = Cart.new
@@ -14,6 +15,7 @@ class CartItemsController < ApplicationController
     @cart.save!
     @cart_item.cart = @cart
     @cart_item.save!
+    redirect_to @shop
   end
 
   def update

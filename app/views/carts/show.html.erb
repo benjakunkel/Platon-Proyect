@@ -7,6 +7,7 @@
         <th scope="col">Tu platón</th>
         <th scope="col">Cantidad</th>
         <th scope="col">Precio</th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
@@ -28,7 +29,8 @@
     <h5>Su total es <strong> $<%=@cart.total%> </strong></h5>
   </div>
   <div class="text-center">
-    <%= link_to "  Realizar compra", confirmation_path,  class:"fas fa-shopping-cart btn btn-lg btn-primary rounded p-3"%>
+    <%= simple_form_for @cart do |f| %>
+      <%= f.button :submit, "Realizar compra", class:"fas fa-shopping-cart btn btn-lg btn-primary rounded p-3"%>
+    <% end %>
   </div>
 </div>
-

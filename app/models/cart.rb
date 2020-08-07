@@ -9,4 +9,12 @@ class Cart < ApplicationRecord
       item.subtotal_price * item.quantity
     end
   end
+
+  def number_of_items
+    cart_items.count
+  end
+
+  def has_items?
+    number_of_items > 0
+  end
 end
