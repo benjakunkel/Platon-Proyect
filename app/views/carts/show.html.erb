@@ -16,9 +16,15 @@
         <td> <%= item.product.name %> </td>
         <td><%= item.quantity %></td>
         <td> $ <%= item.quantity*item.subtotal_price %></td>
+        <td><%= link_to cart_item_path(item), method: :delete, data:{confirm:"Quiere eliminarlo?"} do %>
+          <p class="far fa-trash-alt"></p>
+        <% end %>
+        </td>
       </tr>
       <% end %>
     </tbody>
   </table>
+    <%= link_to "Realizar Compra", confirmation_path %>
 </div>
 
+<%=@cart.total%>
