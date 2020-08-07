@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
     authorize @shop
     if @product.save
       flash[:success] = "Bien ahi perro"
-      redirect_to shop_product_path(@shop,@product)
+      redirect_to @shop
     else
       flash[:error] = "Mal ahi"
       render 'new'
