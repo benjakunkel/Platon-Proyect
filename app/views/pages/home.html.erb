@@ -13,18 +13,16 @@
         </div>
       </div>
     </div>
-
     <div class="exp-card col-6 col-md-4 d-flex justify-content-center bg-white rounded">
       <div>
         <div class="d-flex justify-content-center">
-          <%= cl_image_tag("mundolimpio", height:100, width:100, crop: :fill, class:"mt-4") %>
+          <%= cl_image_tag("mundocorazon", height:100, width:100, crop: :fill, class:"mt-4") %>
         </div>
         <div class="p-2 text-center d-flex justify-content-center">
           <small> Nosotros decidimos aportar nuestro granito de<br>arena en la lucha contra el desperdicio de alimento.</small>
         </div>
       </div>
     </div>
-
     <div class="exp-card col-6 col-md-4 d-flex justify-content-center bg-white rounded">
       <div>
         <div class="d-flex justify-content-center">
@@ -37,9 +35,33 @@
     </div>
   </div>
 </div>
-
-<div class="container p-4">
-<h1 class="text-center">¿Cómo pedir?</h1>
+<div class="content-box p-4 bg-white">
+  <br><br>
+  <div class="container">
+    <div class="row text-center d-flex justify-content-center bg-warning rounded">
+      <div class="col-6 col-md-4 p-4">
+        <div class="stat-items">
+          <i class="fas fa-utensils"></i>
+          <h2><span class="counter text-center"><%=" #{@cart_items.count}"%></span> <span> +</span></h2>
+          <h5>Platones salvados<h5>
+        </div>
+      </div>
+    
+      <div class="col-6 col-md-4 p-4">
+        <div class="stat-items">
+          <i class="far fa-money-bill-alt"></i>
+          <% @cart_items.each do |item| %>
+            <% @total+=item.subtotal_price %>
+          <% end %>
+          <h2><span class="counter text-center"> $<%= @total/2 %> </span></h2>
+          <h5>Ahorrados</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container p-4 ">
+<h1 class="text-center pb-4">¿Cómo pedir?</h1>
   <div class="row d-flex justify-content-center">
     <div class="exp-card col-6 col-md-4 d-flex justify-content-center">
       <div>
@@ -76,16 +98,12 @@
     </div>
   </div>
 </div>
-
-
-
 <div class="bg-white">
   <div class="container p-4">
-  <h1 class="text-center">Restaurants destacados</h1>
+  <h1 class="text-center pb-4">Restaurants destacados</h1>
     <div class="cards d-flex justify-content-center">
       <% @shops.each do |shop| %>
       <%= link_to shop_path(shop), class:"card_product" do %>
-
         <div class="card-img-top position-relative">
           <div class="heart">
             <i class="fas fa-heart"></i>
@@ -109,7 +127,6 @@
         </div>
       <% end %>
       <% end %>
-
     </div>
     <div class="text-center p-4">
       <%= link_to "Ver más", shops_path,  class:"btn btn-lg btn-primary rounded"%>
@@ -117,15 +134,3 @@
   </div>
   </div>
 </div>
-
-<div class="container p-4">
-<h1 class="text-center">Nuestra Misión</h1>
-<p class="text-center">En la Argentina se desechan 16 millones de toneladas de alimentos por año, equivalente al 12.5% de todos los alimentos que se producen en el país.El planeta nos pide a gritos que comencemos a cuidarlo y sabemos que todos estamos tomando conciencia de ésto. Nosotros decidimos aportar nuestro granito de arena en la lucha contra el desperdicio de alimento. Podes unirte a nuestra lucha y disfrutar de nuestros super descuentos </p>
-</div>
-
-
-
-
-
-
-
