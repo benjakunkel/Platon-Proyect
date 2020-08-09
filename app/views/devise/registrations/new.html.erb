@@ -5,15 +5,19 @@
 
     <div class="form-inputs">
       <%= f.input :email, label: "Ingresa tu Email",
-                  required: true,
+                  required: false,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" }%>
+      <%= f.input :address, label: "Ingresa tu dirección",
+                  required: false,
                   autofocus: true,
                   input_html: { autocomplete: "email" }%>
       <%= f.input :password, label: "Ingresa tu Contraseña",
-                  required: true,
+                  required: false,
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                   input_html: { autocomplete: "new-password" } %>
       <%= f.input :password_confirmation, label: "Ingresa tu Contraseña Nuevamente",
-                  required: true,
+                  required: false,
                   input_html: { autocomplete: "new-password" } %>
     </div>
 

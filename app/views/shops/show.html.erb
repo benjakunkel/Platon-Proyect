@@ -28,15 +28,8 @@
             </div>
           </div>
           <div class="p-3">
-            <div class="rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
             <h4 class="pt-2"><%= product.name %></h4>
-              <%# Cierra ahi porque no puede haber un link to dentro de un link to do %>
+            <small class=""><%= product.description %></small>
              <%= link_to "Agregar al Carrito", product_cart_items_path(product), method: :POST, class:"btn btn-primary rounded d-flex justify-content-center"%>
           </div>
         </div>

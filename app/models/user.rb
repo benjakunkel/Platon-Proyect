@@ -12,4 +12,9 @@ class User < ApplicationRecord
   def active_cart
     carts.find_by(submited_at: nil)
   end
+  
+  def submited_cart
+    carts.find_by(submited_at: !nil)
+  end
+
 end

@@ -13,7 +13,7 @@ class Shop < ApplicationRecord
 
   def distance_from(user)
     if latitude.blank? || longitude.blank?
-      return ""
+      return "Direccion no disponible"
     else
       distance = self.distance_to([user.latitude, user.longitude])
       return (distance < 1) ? "#{(distance * 1000).to_i} metros" : "#{distance.to_i} kilometros"
