@@ -10,7 +10,7 @@ class User < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
   
   def active_cart
-    carts.find_by(submited_at: nil)
+    carts.find_by(submited_at: nil) #scopes carts - user
   end
   
   def submited_cart

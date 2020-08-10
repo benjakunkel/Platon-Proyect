@@ -11,4 +11,13 @@
  .thead-green{
   background-color: #0A978E;
   color: white;
- }
+}
+#titulo-cart {
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+#titulo-cart {
+  font-size: 32px;;
+}
+}
