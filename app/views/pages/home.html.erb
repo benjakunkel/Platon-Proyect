@@ -5,7 +5,7 @@
     <div class="exp-card col-6 col-md-4 d-flex justify-content-center bg- rounded">
       <div>
         <div class="d-flex justify-content-center">
-          <%= cl_image_tag("waste", crop: :pad, class:"mt-4") %>
+          <%= cl_image_tag("waste", crop: :pad, class:"mt-4 thumbnail") %>
         </div>
         <div class="p-2 text-center d-flex justify-content-center">
           <small>En la Argentina se desechan 16 millones<br>de toneladas de alimentos por año.</small>
@@ -15,7 +15,7 @@
     <div class="exp-card col-6 col-md-4 d-flex justify-content-center bg-white rounded">
       <div>
         <div class="d-flex justify-content-center">
-          <%= cl_image_tag("environment",  crop: :fill, class:"mt-4") %>
+          <%= cl_image_tag("environment",  crop: :fill, class:"mt-4 thumbnail") %>
         </div>
         <div class="p-2 text-center d-flex justify-content-center">
           <small> Nosotros decidimos aportar nuestro granito de<br>arena en la lucha contra el desperdicio de alimento.</small>
@@ -25,7 +25,7 @@
     <div class="exp-card col-6 col-md-4 d-flex justify-content-center bg-white rounded">
       <div>
         <div class="d-flex justify-content-center">
-          <%= cl_image_tag("mundoo", crop: :fill, class:"mt-4") %>
+          <%= cl_image_tag("mundoo", crop: :fill, class:"mt-4 thumbnail") %>
         </div>
         <div class="p-2 text-center d-flex justify-content-center">
           <small> Unite a nosotros, disfrutá de nuestros descuentos<br>y salvemos al planeta juntos.</small>
@@ -34,31 +34,34 @@
     </div>
   </div>
 </div>
-<div class="d-flex bg-white justify-content-center row pb-4" >
-  <div class=" d-flex justify-content-center col"> 
-   <%= cl_image_tag("wasted-circle", height:300, width:300) %>
+<div class="bg-white row pb-4" >
+  <div class="col-sm-12 col-md-6">
+    <div class="d-flex justify-content-center"> 
+    <%= cl_image_tag("wasted-circle", height:300, width:300, class:"waste") %>
+    </div>
   </div>
-  <div class="content-box p-4 bg-primary rounded w-50">
-    <br><br>
+  <div class="col-sm-12 col-md-6">
+    <div class="content-box p-4 bg-primary rounded">
+      <br><br>
       <h2 class="text-center text-white">LOGROS PLATÓNICOS </h2>
-    <div class="container text-white ">
-      <div class="row text-center d-flex justify-content-center">
-        <div class="border-right col-6 col-md-4 p-4">
-          <div class="stat-items">
-            <i class="fas fa-utensils"></i>
-            <h2><span class="counter text-center"><%=" #{@cart_items.count}"%></span> <span> +</span></h2>
-            <h5>Platones salvados<h5>
+      <div class="container text-white ">
+        <div class="row text-center d-flex justify-content-center">
+          <div class="border-right col-6 col-md-4 p-4">
+            <div class="stat-items">
+              <i class="fas fa-utensils"></i>
+              <h2><span class="counter text-center"><%=" #{@cart_items.count}"%></span> <span> +</span></h2>
+              <h5>Platones salvados<h5>
+            </div>
           </div>
-        </div>
-      
-        <div class="col-6 col-md-4 p-4">
-          <div class="stat-items">
-            <i class="far fa-money-bill-alt"></i>
-            <% @cart_items.each do |item| %>
-              <% @total+=item.subtotal_price %>
-            <% end %>
-            <h2><span class="counter text-center"> $<%= @total/2 %> </span></h2>
-            <h5>Ahorrados</h5>
+          <div class="col-6 col-md-4 p-4">
+            <div class="stat-items">
+              <i class="far fa-money-bill-alt"></i>
+              <% @cart_items.each do |item| %>
+                <% @total+=item.subtotal_price %>
+              <% end %>
+              <h2><span class="counter text-center"> $<%= @total/2 %> </span></h2>
+              <h5>Ahorrados</h5>
+            </div>
           </div>
         </div>
       </div>
@@ -71,7 +74,7 @@
     <div class="exp-card col-6 col-md-4 d-flex justify-content-center">
       <div>
         <div class="d-flex justify-content-center">
-          <%= cl_image_tag("mapa", crop: :fill, class:"mt-4") %>
+          <%= cl_image_tag("mapa", crop: :fill, class:"mt-4 thumbnail") %>
         </div>
         <div>
           <h4 class="mt-4 text-center">1.Ubicá</h4>
@@ -82,7 +85,7 @@
     <div class="col-6 col-md-4 d-flex justify-content-center exp-card">
       <div>
         <div class="d-flex justify-content-center">
-          <%= cl_image_tag("elegi" , crop: :fill, class:"mt-4") %>
+          <%= cl_image_tag("elegi" , crop: :fill, class:"mt-4 thumbnail") %>
         </div>
         <div>
           <h4 class="mt-4 text-center">2.Elegí</h4>
@@ -93,7 +96,7 @@
     <div class="col-6 col-md-4 d-flex justify-content-center exp-card">
      <div>
         <div class="d-flex justify-content-center">
-          <%= cl_image_tag("shop",  crop: :fill, class:"mt-4") %>
+          <%= cl_image_tag("shop",  crop: :fill, class:"mt-4 thumbnail") %>
         </div>
         <div>
           <h4 class="mt-4 text-center">3.Retirá</h4>
@@ -107,7 +110,7 @@
   <div class="container p-4">
   <h1 class="text-center pb-4">Restaurants destacados</h1>
     <div class="cards d-flex justify-content-center">
-      <% @shops.each do |shop| %>
+      <% @destacados.each do |shop| %>
       <%= link_to shop_path(shop), class:"card_product" do %>
         <div class="card-img-top position-relative">
           <div class="heart">

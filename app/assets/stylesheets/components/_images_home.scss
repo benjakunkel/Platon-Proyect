@@ -1,0 +1,21 @@
+.thumbnail{
+  height: 100px;
+  width: 100px;
+
+}
+.waste{
+  width: 250px;
+  height: 250px;
+}
+
+@media (min-width: 576px) {
+  .thumbnail{
+  height: 300px;
+  width: 300px;
+  }
+  .waste{
+    height: 300px;
+    width: 300px;
+  }
+}
+
