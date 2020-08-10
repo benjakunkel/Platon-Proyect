@@ -2,65 +2,94 @@
   background-size: cover;
   background-position: center;
   padding: 2rem;
+  height: 40vh;
 }
 
-.botoningreso{
- color: white;
- margin-top: 16px;
- font-size: 14px;
- padding: 6px;
+.botones {
+ position: absolute;
+ top: -58px;
  border-color: white;
+ width: 100%;
+ flex-direction: column;
+ max-width: 80%;
+ margin: auto;
+ left: 0;
+ right: 0;
 }
-
+.botonn {
+  border-radius: 50px;
+  font-size: 12px;
+  margin:10px auto;
+  padding: 10px;
+  max-width: 300px;
+  background-color:#0A978E;
+  font-family: $headers-font;
+  color: white;
+  text-decoration: none;
+  margin-right: 0px;
+  box-shadow: 2px 2px 3px #056963;
+}
+.botonn:hover {
+  text-decoration: none;
+  background-color:#88cfc9;
+}
 .banner h1 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 2px white;
-  font-size: 32px;
-  font-family: 'PT Serif', serif;
+  font-size: 34px;
 }
+
+
 
 .banner p {
   font-size: 8px;
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(226, 223, 223, 0.2);
-  font-family: 'PT Serif', serif;
 }
 
 @media (min-width: 576px) {
   .banner {
     padding: 4rem;
     h1 {
-      font-size: 56px;
+      font-size: 42px;
     }
     p {
       font-size: 38px;
     }
+  }
+  .botones {
+    position: absolute;
+    top: -38px;
+    max-width: 100%;
+    width: 100%;
+    flex-direction: row;
+  }   
+  .botonn {
+    border-radius: 50px;
+    font-size: 32px;
+    min-width: 220px;
+    max-width: 10000px;
+    font-family: $headers-font;
+    padding: 6px 20px;
   }
 }
 
 @media (min-width: 768px) {
   .banner {
     padding: 4rem;
-    height: 40vh;
+    height: 70vh;
     h1 {
-      font-size: 56px;
-      font-family: 'PT Serif', serif;
+      font-size: 52px;
+      
     }
     p {
       font-size: 38px;
-      font-family: 'PT Serif', serif;
+     
     }
   }
-  .botoningreso{
-    color: white;
-    margin-top: 12px;
-    font-size: 18px;
-    padding: 10px;
-   }
 }
-
 
 // / Small devices (landscape phones, 576px and up)
 // @media (min-width: 576px) { ... }
