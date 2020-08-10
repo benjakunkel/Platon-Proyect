@@ -7,7 +7,6 @@
       <h4 class="text-center pb-2">Platos mas cercanos</h4>
       <div class="cards_index dragscroll">
         <% @products.each do |product| %>
-          <%= link_to product_path(product) do %>
             <div class="card_product_index">
               <div class="card-img-top position-relative">
                 <div class="heart">
@@ -31,7 +30,6 @@
               </div>
             </div>
           <% end %>
-        <% end %>
       </div>
     </div>
     <%# Locales cercanos !!  %>
