@@ -30,14 +30,18 @@
           <div class="p-3">
             <h4 class="pt-2"><%= product.name %></h4>
             <small class=""><%= product.description %></small>
-            <% if current_user.active_cart.shop == @shop %>
-              <% if cart_item = current_user.active_cart.cart_items.find { |item| item.product == product } %>
-                <%= link_to "Agregar otro", increase_cart_item_path(cart_item), method: :PATCH, class:"btn btn-primary rounded d-flex justify-content-center"%>
-              <% else %>
-                <%= link_to "Agregar al Carrito", product_cart_items_path(product), method: :POST, class:"btn btn-primary rounded d-flex justify-content-center"%>
-              <% end %>
+            <% if current_user.active_cart.nil? %>
+              <%= link_to "Agregar al Carrito", product_cart_items_path(product), method: :POST, class:"btn btn-primary rounded d-flex justify-content-center"%>
             <% else %>
-              <%= link_to "Agregar al Carrito", product_cart_items_path(product), method: :POST, data: { confirm: 'Tu carrito tiene productos de otro shop, si deseas continuar seran removidos!' }, class:"btn btn-primary rounded d-flex justify-content-center"%>
+              <% if current_user.active_cart.shop == @shop %>
+                <% if cart_item = current_user.active_cart.cart_items.find { |item| item.product == product } %>
+                  <%= link_to "Agregar otro", increase_cart_item_path(cart_item), method: :PATCH, class:"btn btn-primary rounded d-flex justify-content-center"%>
+                <% else %>
+                  <%= link_to "Agregar al Carrito", product_cart_items_path(product), method: :POST, class:"btn btn-primary rounded d-flex justify-content-center"%>
+                <% end %>
+              <% else %>
+                <%= link_to "Agregar al Carrito", product_cart_items_path(product), method: :POST, data: { confirm: 'Tu carrito tiene productos de otro shop, si deseas continuar seran removidos!' }, class:"btn btn-primary rounded d-flex justify-content-center"%>
+              <% end %>
             <% end %>
           </div>
         </div>
