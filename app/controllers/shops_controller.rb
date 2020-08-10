@@ -3,6 +3,8 @@ skip_before_action :authenticate_user!, only: [ :index ]
 
   def index
       @shops = policy_scope(Shop)
+      @products = Product.order("RANDOM()").first(10)
+      @destacados = Shop.joins(:products).distinct.select('shops.*, COUNT(products.*) AS products_count').group('shops.id').order("products_count DESC")
   end
 
   def show
