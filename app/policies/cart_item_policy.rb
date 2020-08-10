@@ -12,4 +12,8 @@ class CartItemPolicy < ApplicationPolicy
   def destroy?
     true
   end
+
+  def increase?
+    true
+  end
 end

@@ -4,7 +4,7 @@ class CartItemsController < ApplicationController
     @product = Product.find(params[:product_id])
     @shop = @product.shop
     @cart_item = CartItem.new(product: @product, quantity: 1, subtotal_price: @product.unit_price)
-    if current_user.carts.empty? || !current_user.carts.last.submited_at.nil?
+    if current_user.carts.empty? || current_user.carts.last.submited_at.present?
       @cart = Cart.new
     else
       @cart = current_user.carts.last
@@ -13,6 +13,7 @@ class CartItemsController < ApplicationController
     @cart.user = current_user
     @cart.shop = @product.shop
     @cart.save!
+    @cart.cart_items.joins(:product).merge(Product.where.not(shop: @shop)).destroy_all
     @cart_item.cart = @cart
     @cart_item.save!
     redirect_to @shop
@@ -31,6 +32,13 @@ class CartItemsController < ApplicationController
     redirect_to cart_path(@cart)
   end
 
+  def increase
+    @cart_item = CartItem.find(params[:id])
+    authorize @cart_item
+    @cart_item.quantity += 1
+    @cart_item.save
+    redirect_to @cart_item.product.shop
+  end
 
   private
 
