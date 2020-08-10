@@ -8,7 +8,12 @@ Rails.application.routes.draw do
   resources :product, only: [:update, :edit, :destroy] do
     resources :cart_items, only: [:create]
   end  
-  resources :cart_items, only: [:update, :destroy]
+  resources :cart_items, only: [:update, :destroy] do
+    member do
+      patch "increase"
+    end
+  end
   resources :carts, only: [:show, :update]
+  # patch "/increase", 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
