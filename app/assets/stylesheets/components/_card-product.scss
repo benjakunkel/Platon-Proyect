@@ -6,7 +6,7 @@
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     display: flex;
     text-align: left;
-
+    min-height: 140px;
 
   img {
     height: 100%;
@@ -29,24 +29,21 @@
     margin-bottom: 13px;
     margin-top: 2px;
     max-width: 140px;
+    max-height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .card-product-infos {
     flex-grow: 1;
-    padding: 16px;
-    position: relative;
+    padding: 16px 4px 16px 16px;
+
   }
   .price-product {
-    position: absolute;
-    bottom: 83px;
-    right: 15px;
     text-align: center;
     text-decoration: line-through;
   }
   .offer-product {
-    position: absolute;
-    bottom: 58px;
-    right: 5px;
     background-color: #EB5757;
     text-align: center;
     padding-top: 2px;
@@ -55,6 +52,7 @@
     height: 25px;
     color: white;
   }
+
 }
 
 @media (min-width: 768px) {
@@ -65,8 +63,23 @@
     }
     p{
       font-size: 16px;
-      max-width: 88%;
+      max-width: 75%;
+      max-height: 64px;
+
     }
-    max-width: 600px;
+    .offer-product{
+      width: 90px;
+      font-size: 17px;
+    }
+
+    img {
+    height: 100%;
+    width: 25%;
+    object-fit: cover;
   }
+  max-width: 700px;
+  min-height: 175px;
+
+  }
+
 }
