@@ -1,7 +1,7 @@
 class ShopPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      scope.joins(:products).distinct
     end
   end
   def index?
