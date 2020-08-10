@@ -1,6 +1,7 @@
 <%= render 'shared/banner' %>
-<div class="container-fluid bg-white p-5">
-  <h1 class="text-center p-4">¡Sé parte del cambio!</h1>
+
+<div class="container-fluid bg-white p-5 ">
+  <h1 class="text-center pt-5">¡Sé parte del cambio!</h1>
   <div class="row d-flex justify-content-center bg-white width-100 ">
     <div class="exp-card col-6 col-md-4 d-flex justify-content-center bg- rounded">
       <div>
@@ -18,7 +19,7 @@
           <%= cl_image_tag("environment",  crop: :fill, class:"mt-4 thumbnail") %>
         </div>
         <div class="p-2 text-center d-flex justify-content-center">
-          <small> Nosotros decidimos aportar nuestro granito de<br>arena en la lucha contra el desperdicio de alimento.</small>
+          <small>Decidimos aportar nuestro granito de<br>arena en para combatir el desperdicio de alimento.</small>
         </div>
       </div>
     </div>
@@ -34,17 +35,18 @@
     </div>
   </div>
 </div>
-<div class="bg-white row pb-4" >
-  <div class="col-sm-12 col-md-6">
+
+<div class="container-fluid bg-warning row" >
+  <div class="col-sm-12 col-md-6 pb-4">
     <div class="d-flex justify-content-center"> 
     <%= cl_image_tag("wasted-circle", height:300, width:300, class:"waste") %>
     </div>
   </div>
   <div class="col-sm-12 col-md-6">
-    <div class="content-box p-4 bg-primary rounded">
+    <div class="content-box bg-primary rounded">
       <br><br>
       <h2 class="text-center text-white">LOGROS PLATÓNICOS </h2>
-      <div class="container text-white ">
+      <div class="container text-white">
         <div class="row text-center d-flex justify-content-center">
           <div class="border-right col-6 col-md-4 p-4">
             <div class="stat-items">
@@ -68,45 +70,47 @@
     </div>
   </div>
 </div>
-<div class="container p-4  ">
-  <h1 class="text-center pb-4">¿Cómo pedir?</h1>
-  <div class="row d-flex justify-content-center">
-    <div class="exp-card col-6 col-md-4 d-flex justify-content-center">
-      <div>
-        <div class="d-flex justify-content-center">
-          <%= cl_image_tag("mapa", crop: :fill, class:"mt-4 thumbnail") %>
-        </div>
+<div class="container-fluid bg-warning p-4">
+  <div class="container pb-4  ">
+    <h1 class="text-center pb-4">¿Cómo pedir?</h1>
+    <div class="row d-flex justify-content-center">
+      <div class="exp-card col-6 col-md-4 d-flex justify-content-center">
         <div>
-          <h4 class="mt-4 text-center">1.Ubicá</h4>
-          <small> Ubicá tus comercios cercanos</small>
+          <div class="d-flex justify-content-center">
+            <%= cl_image_tag("mapa", crop: :fill, class:"mt-4 thumbnail") %>
+          </div>
+          <div>
+            <h4 class="mt-4 text-center">1.Ubicá</h4>
+            <small>Encontrá tus comercios cercanos</small>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-6 col-md-4 d-flex justify-content-center exp-card">
-      <div>
-        <div class="d-flex justify-content-center">
-          <%= cl_image_tag("elegi" , crop: :fill, class:"mt-4 thumbnail") %>
-        </div>
+      <div class="col-6 col-md-4 d-flex justify-content-center exp-card">
         <div>
-          <h4 class="mt-4 text-center">2.Elegí</h4>
-          <small>Elegí tus platos favoritos</small>
+          <div class="d-flex justify-content-center">
+            <%= cl_image_tag("elegi" , crop: :fill, class:"mt-4 thumbnail") %>
+          </div>
+          <div>
+            <h4 class="mt-4 text-center">2.Elegí</h4>
+            <small>Seleccioná tus platos favoritos</small>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-6 col-md-4 d-flex justify-content-center exp-card">
-     <div>
-        <div class="d-flex justify-content-center">
-          <%= cl_image_tag("shop",  crop: :fill, class:"mt-4 thumbnail") %>
-        </div>
-        <div>
-          <h4 class="mt-4 text-center">3.Retirá</h4>
-          <small>Disfrutá de la mejor comida al mejor precio</small>
+      <div class="col-6 col-md-4 d-flex justify-content-center exp-card">
+      <div>
+          <div class="d-flex justify-content-center">
+            <%= cl_image_tag("shop",  crop: :fill, class:"mt-4 thumbnail") %>
+          </div>
+          <div>
+            <h4 class="mt-4 text-center">3.Retirá</h4>
+            <small>Disfrutá de la mejor comida al mejor precio</small>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div class="bg-white">
+</div>  
+<div class="bg-white p-2">
   <div class="container p-4">
   <h1 class="text-center pb-4">Restaurants destacados</h1>
     <div class="cards d-flex justify-content-center">

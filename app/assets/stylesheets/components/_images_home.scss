@@ -1,4 +1,4 @@
-.thumbnail{
+.thumbnail {
   height: 100px;
   width: 100px;
 
@@ -6,6 +6,10 @@
 .waste{
   width: 250px;
   height: 250px;
+}
+
+h1 {
+  font-size: 28px;
 }
 
 @media (min-width: 576px) {
@@ -16,6 +20,9 @@
   .waste{
     height: 300px;
     width: 300px;
+  }
+  h1 {
+    font-size: 38px;
   }
 }
 
