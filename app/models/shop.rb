@@ -11,6 +11,9 @@ class Shop < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
+  scope :with_category, ->(category) { joins(:products).merge(Product.where(category: category)).distinct }
+
+
   def distance_from(user)
     if latitude.blank? || longitude.blank?
       return "Direccion no disponible"
