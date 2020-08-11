@@ -1,7 +1,12 @@
   <div class="navbar navbar-expand-sm <%=local_assigns[:home] ? "navbar-dark bg-transparent position-absolute w-100 " : "navbar-light" %> navbar-lewagon">
   <%# Titulo (logo) %>
-  <%= link_to "/shops", class: "nav-link" do %>
-   <img src="assets/logo.png">
+  
+  <%= link_to "/shops", class: "nav-link loguito" do %>
+    <% if local_assigns[:home] %>
+      <img src="assets/logo.png">
+    <% else %>
+      <img src="assets/logonegro.png">
+    <% end %>
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,21 +62,21 @@
           <i class="fas fa-search nav-link mt-1"></i>
         </li>
         <li class="nav-item">
-          <%= link_to "Nosotros", new_user_session_path, class: "nav-link letrablanca mr-2" %>
+          <%= link_to "Nosotros", new_user_session_path, class: "nav-link letrablanca mr-2 ml-2" %>
         </li>
 
         <li class="nav-item">
-          <%= link_to "Ayuda", new_user_session_path, class: "nav-link letrablanca mr-2" %>
+          <%= link_to "Ayuda", new_user_session_path, class: "nav-link letrablanca mr-2 ml-2" %>
         </li>
 
         <li class="nav-item">
-          <%= link_to "Iniciar sesión", new_user_session_path, class: "nav-link letrablanca mr-2" %>
+          <%= link_to "Iniciar sesión", new_user_session_path, class: "nav-link letrablanca mr-2 ml-2" %>
         </li>
         <li class="nav-item">
         <% if local_assigns[:home] %>
-          <%= link_to "Quiero registrarme",  new_user_registration_path, class: "btn btn-outline-light " %>
+          <%= link_to "Quiero registrarme",  new_user_registration_path, class: "btn btn-outline-light botonarriba mr-2 ml-2" %>
         <% else %>
-          <%= link_to "Quiero registrarme",  new_user_registration_path, class: "btn btn-outline-dark " %>
+          <%= link_to "Quiero registrarme",  new_user_registration_path, class: "btn btn-outline-dark botonarriba mr-2 ml-2" %>
         </li>
         <% end %>
       <% end %>
