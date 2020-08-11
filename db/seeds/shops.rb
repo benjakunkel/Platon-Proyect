@@ -168,5 +168,39 @@ SHOPS = [
         photo: "https://rico.com.ar/upload/products/222/408x650_Sandwich_Roll%20Gran%20Mex.png?1591805543",
       },
     ]
-  }
+  },
+  {
+    name: "Sushi Club",
+    address: "Av. Las Heras 2956 CABA, Argentina",
+    email: "sushi-club@mail.com",
+    phone_number: "0810-222-SUSHI (7874)",
+    photo: "https://www.numeral11.com/wp-content/uploads/2016/10/sushi-club-logo-e1497406187812.jpg",
+    user_id: "",
+    products: [
+      {
+        name:"Philadelphia Roll (4p)",
+        description: "relleno de salmón y queso crema, con sésamo",
+        category: "sushi",
+        previous_price: "650",
+        unit_price: "350",
+        photo: "http://www.sushiboom.com.ar/488-large_default/philadelphia.jpg",
+      },
+      {
+        name:"Niguiris de Salmón (6p)",
+        description: "finas fetas de salmón sobre arroz",
+        category: "sushi",
+        previous_price: "700",
+        unit_price: "450",
+        photo: "https://images.ricardocuisine.com/services/recipes/500x675_7489.jpg?_ga=2.247284164.1944325625.1597178415-462113163.1597178415",
+      },
+      {
+        name:"Combinado SushiClub (15p)",
+        description: "buenos aires roll, placer real, feel roll, honey roll, philadelphia roll, niguiri de salmón y sashimi de salmón",
+        category: "sushi",
+        previous_price: "1000",
+        unit_price: "650",
+        photo: "https://www.sushidag.com.ar/wp-content/uploads/2018/04/jerusalem.jpg",
+      },
+    ]
+  },
 ]
