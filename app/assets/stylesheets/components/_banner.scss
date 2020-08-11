@@ -35,10 +35,10 @@
   background-color:#88cfc9;
 }
 .banner h1 {
-  margin: 0;
+  margin-top: 90px;
   color: white;
   text-shadow: 1px 1px 2px white;
-  font-size: 34px;
+  font-size: 24px;
 }
 
 
@@ -55,10 +55,11 @@
     padding: 4rem;
     h1 {
       font-size: 44px;
-      width: 540px;
+      margin: 0;
     }
     p {
-      font-size: 28px;
+      font-size: 24px;
+      margin-top: 20px;
     }
     height: 610px;
   }
@@ -66,9 +67,9 @@
   .botones {
     color: transparent;
     position: relative;
-    top: -100px;
-    align-items: flex-start;
-    justify-content: flex-start;
+    top: -250px;
+    align-items: center;
+    justify-content: center;
     bottom: auto;
     //left: auto;
     // max-width: 100%;
@@ -88,6 +89,11 @@
   .blanco{
     background-color: white;
     color: $primary;
+  }
+  .titulo{
+    position: relative;
+    top: 100px;
+    bottom: auto;
   }
 }
 
