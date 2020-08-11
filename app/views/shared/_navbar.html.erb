@@ -1,9 +1,8 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "/shops", class: "navbar-brand" do %>
-
+  <div class="navbar navbar-expand-sm <%=local_assigns[:home] ? "navbar-dark bg-transparent position-absolute w-100 " : "navbar-light" %> navbar-lewagon">
   <%# Titulo (logo) %>
-  <h4 class="mt-1 text-monospace"> <strong> PLATÓN </strong></h4>
-    <% end %>
+  <%= link_to "/shops", class: "nav-link" do %>
+   <img src="assets/logo.png">
+  <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -58,11 +57,23 @@
           <i class="fas fa-search nav-link mt-1"></i>
         </li>
         <li class="nav-item">
-          <%= link_to "Iniciar sesión", new_user_session_path, class: "nav-link" %>
+          <%= link_to "Nosotros", new_user_session_path, class: "nav-link letrablanca mr-2" %>
+        </li>
+
+        <li class="nav-item">
+          <%= link_to "Ayuda", new_user_session_path, class: "nav-link letrablanca mr-2" %>
+        </li>
+
+        <li class="nav-item">
+          <%= link_to "Iniciar sesión", new_user_session_path, class: "nav-link letrablanca mr-2" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Registro",  new_user_registration_path, class: "nav-link" %>
+        <% if local_assigns[:home] %>
+          <%= link_to "Quiero registrarme",  new_user_registration_path, class: "btn btn-outline-light " %>
+        <% else %>
+          <%= link_to "Quiero registrarme",  new_user_registration_path, class: "btn btn-outline-dark " %>
         </li>
+        <% end %>
       <% end %>
     </ul>
   </div>
