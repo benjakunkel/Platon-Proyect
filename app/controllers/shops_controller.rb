@@ -2,8 +2,14 @@ class ShopsController < ApplicationController
 skip_before_action :authenticate_user!, only: [ :index ]
 
   def index
+    @category = params[:category]
+    if @category.present?
+      @products = Product.where(category: @category)
+      @shops = policy_scope(Shop).with_category(@category)
+    else
       @shops = policy_scope(Shop)
       @products = Product.order("RANDOM()").first(10)
+    end
       @destacados = Shop.joins(:products).distinct.select('shops.*, COUNT(products.*) AS products_count').group('shops.id').order("products_count DESC")
   end
 
