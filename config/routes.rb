@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'deliveries/create'
   root to: 'pages#home'
   get '/pages/confirmation', to: 'pages#confirmation', as: "confirmation"
   devise_for :users
@@ -12,7 +13,8 @@ Rails.application.routes.draw do
       patch "increase"
     end
   end
-  resources :carts, only: [:show, :update]
-  # patch "/increase", 
+  resources :carts, only: [:show, :update] do
+    resources :deliveries, only: :create # patch "/increase", 
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

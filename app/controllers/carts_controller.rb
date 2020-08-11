@@ -19,4 +19,5 @@ class CartsController < ApplicationController
     @cart.update(submited_at: Time.current)
     redirect_to confirmation_path
   end
+
 end
