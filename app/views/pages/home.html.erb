@@ -6,7 +6,7 @@
     <div class="exp-card col-6 col-md-4 d-flex justify-content-center bg- rounded">
       <div>
         <div class="d-flex justify-content-center">
-          <%= cl_image_tag("waste", crop: :pad, class:"mt-4 thumbnail") %>
+          <%= cl_image_tag("basura", crop: :pad, class:"mt-4 thumbnail") %>
         </div>
         <div class="p-2 text-center d-flex justify-content-center">
           <small>En la Argentina se desechan 16 millones<br>de toneladas de alimentos por año.</small>
@@ -16,7 +16,7 @@
     <div class="exp-card col-6 col-md-4 d-flex justify-content-center bg-white rounded">
       <div>
         <div class="d-flex justify-content-center">
-          <%= cl_image_tag("environment",  crop: :fill, class:"mt-4 thumbnail") %>
+          <%= cl_image_tag("plantasmano",  crop: :fill, class:"mt-4 thumbnail") %>
         </div>
         <div class="p-2 text-center d-flex justify-content-center">
           <small>Decidimos aportar nuestro granito de<br>arena en para combatir el desperdicio de alimento.</small>
@@ -26,7 +26,7 @@
     <div class="exp-card col-6 col-md-4 d-flex justify-content-center bg-white rounded">
       <div>
         <div class="d-flex justify-content-center">
-          <%= cl_image_tag("mundoo", crop: :fill, class:"mt-4 thumbnail") %>
+          <%= cl_image_tag("basura", crop: :fill, class:"mt-4 thumbnail") %>
         </div>
         <div class="p-2 text-center d-flex justify-content-center">
           <small> Unite a nosotros, disfrutá de nuestros descuentos<br>y salvemos al planeta juntos.</small>
@@ -36,41 +36,41 @@
   </div>
 </div>
 
-<div class="container-fluid bg-warning row" >
-  <div class="col-sm-12 col-md-6 pb-4">
-    <div class="d-flex justify-content-center"> 
-    <%= cl_image_tag("wasted-circle", height:300, width:300, class:"waste") %>
-    </div>
-  </div>
+<div class="container-fluid row align-items-center" >
   <div class="col-sm-12 col-md-6">
-    <div class="content-box bg-primary rounded">
-      <br><br>
-      <h2 class="text-center text-white">LOGROS PLATÓNICOS </h2>
-      <div class="container text-white">
+    <div class="content-box rounded platonicos">
+      <h2 class="text-center text-dark mt-4">LOGROS PLATÓNICOS </h2>
+      <div class="container text-dark">
         <div class="row text-center d-flex justify-content-center">
-          <div class="border-right col-6 col-md-4 p-4">
+          <div class="border-right col-6 col-md-4 ">
             <div class="stat-items">
               <i class="fas fa-utensils"></i>
-              <h2><span class="counter text-center"><%=" #{@cart_items.count}"%></span> <span> +</span></h2>
-              <h5>Platones salvados<h5>
+              <h2><span class="counter text-center text-primary "><%=" #{@cart_items.count}"%> + </span> </h2>
+              <h4><strong>Platones Salvados</strong></h4>
             </div>
           </div>
-          <div class="col-6 col-md-4 p-4">
+          <div class="col-6 col-md-4 ">
             <div class="stat-items">
               <i class="far fa-money-bill-alt"></i>
               <% @cart_items.each do |item| %>
                 <% @total+=item.subtotal_price %>
               <% end %>
-              <h2><span class="counter text-center"> $<%= @total/2 %> </span></h2>
-              <h5>Ahorrados</h5>
+              <h2><span class="counter text-center text-primary"> $<%= @total/2 %> </span></h2>
+              <h4><strong> Ahorrados </strong></h4>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <%# FOTO DE LA MINA CON LAS COMPRASSSSSSSS %>
+  <div class="col-sm-12 col-md-6 pb-4">
+    <div class="d-flex justify-content-center"> 
+      <%= cl_image_tag("compras", height:500, width:300, class:"waste") %>
+    </div>
+  </div>
 </div>
-<div class="container-fluid bg-warning p-4">
+<div class="container-fluid p-4">
   <div class="container pb-4  ">
     <h1 class="text-center pb-4">¿Cómo pedir?</h1>
     <div class="row d-flex justify-content-center">

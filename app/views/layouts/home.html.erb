@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Platon</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  </head>
+  <body>
+  <div class="min-vh-100 d-flex flex-column">
+    <%= render 'shared/flashes' %>
+  
+    <div class="wrapper">
+    <%= render 'shared/navbar', home: true %>
+      <%= yield %>
+    </div>
+    <%= render 'shared/footer' %>
+  </div>
+  <!-- javascrip para poder hacer drag de las cards en el index -->
+    <script type="text/javascript" src="https://cdn.rawgit.com/asvd/dragscroll/master/dragscroll.js"></script>
+  </body>
+</html>
