@@ -1,31 +1,63 @@
 <div class="container">
+  <h1 class="m-5">¡Bienvenido <%= @shop.name %>!</h1>
   <div class="row"> 
     <div class="col-12 col-md-6">
-      <div class="bg-primary">
-        <h3>Tus pedidos de hoy</h3>
-        <% @carts.each do |cart|%>
-          <div>
-            <h5><%= cart.user.first_name + cart.user.last_name %></h5>
-            <p>productos: </p>
-            <div>
-            <% cart.cart_items.each do |item|%>
-            <%= item.quantity %> - <%= item.product.name %> <%= item.subtotal_price %> 
-            <% end %>
-            <%= cart.price %>
-            </div>
-          </div>
-        <% end %>  
-      </div>
+      <h3>Tus pedidos de hoy</h3>
+      <table class="table table-striped table-hover">
+        <thead class="thead-green">
+          <tr>
+            <th scope="col">Cliente </th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Producto</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Status</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @carts.each do |cart| %>
+            <tr>
+              <td> <%= cart.user.first_name + " " + cart.user.last_name %> </td>
+              <td><%= cart.user.phone_number %></td>
+              <% cart.cart_items.each do |item|%>
+                <td><%= item.quantity %></td>
+                <td> <%= item.product.name %></td>  
+              <% end %>
+              <td><%= cart.total %></td>
+              <td> <%= cart.delivery_status %></td> 
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
+     
+  
     <div class="col-12 col-md-6">
       <h3>Tus productos</h3>
+      <br>
       <%= link_to "Cargar producto", new_product_path, class:"btn btn-primary btn-block" %>
+      <br>
       <% @products.each do |product|%>
-        <div>
-          <%= cl_image_tag product.photo.key, height:300, width:300, crop: :fill %>
-          <h5><%=product.name%></h5>
-          <%= link_to "Editar producto", edit_product_path(product), class:"btn btn-primary" %>
-          <%= link_to "Eliminar producto", product_path(product), method: :delete, class:"btn btn-primary" %>
+        <div class="col-12 col-md-12">
+          <div class="card-product">
+            <%= cl_image_tag product.photo.key, crop: :fill %>
+            <div class="card-product-infos d-flex flex-column justify-content-between">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <h2><%= product.name %></h2>
+                  <p><%= product.description %></p>
+                </div>
+                <div class="d-flex flex-column">
+                  <span class="price-product">$ <%= product.previous_price %></span>
+                  <span class="offer-product">$<%= product.unit_price %></span>
+                </div>
+              </div>
+              <div class="text-center">
+                <%= link_to "Editar producto", edit_product_path(product), class:"btn btn-primary" %>
+                <%= link_to "Eliminar producto", product_path(product), method: :delete, class:"btn btn-primary" %>
+              </div>
+            </div>
+          </div>
         </div>
       <% end %>  
     </div>

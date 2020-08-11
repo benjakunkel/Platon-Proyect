@@ -39,7 +39,7 @@ class ProductsController < ApplicationController
     authorize @shop
     if @product.update_attributes(product_params)
       flash[:success] = "Actualizado con exito"
-      redirect_to shop_path(@shop)
+      redirect_to dashboard_path(@shop)
     else
       flash[:error] = "Error al Editar, pruebe nuevamente"
       render 'edit'
@@ -51,7 +51,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     authorize @shop
     @product.destroy
-    redirect_to shop_path(@shop)
+    redirect_to dashboard_path(@shop)
   end
 
 private
