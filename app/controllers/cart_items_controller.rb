@@ -16,6 +16,7 @@ class CartItemsController < ApplicationController
     @cart.cart_items.joins(:product).merge(Product.where.not(shop: @shop)).destroy_all
     @cart_item.cart = @cart
     @cart_item.save!
+    flash[:notice] = "#{@product.name} ha sido agregado"
     redirect_to @shop
   end
 

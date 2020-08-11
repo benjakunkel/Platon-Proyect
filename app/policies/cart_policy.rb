@@ -12,4 +12,8 @@ class CartPolicy < ApplicationPolicy
   def update?
     record.user_id == user.id
   end
+  
+  def create?
+    record.shop.user == user
+  end
 end
