@@ -1,7 +1,7 @@
 <h1>Products#edit</h1>
 <p>Find me in app/views/products/edit.html.erb</p>
 
-<%= simple_form_for [@shop, @product] do |f| %>
+<%= simple_form_for [@product] do |f| %>
 <%= f.input :name, label:"Nombre:", required: false %>
 <%= f.input :description, label:"Descripcion:", required: false %>	 
 <%= f.input :unit_price, label:"Precio unitario:", required: false %>
