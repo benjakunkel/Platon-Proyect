@@ -1,52 +1,54 @@
 <% if @products.first.photo.attached? %>
-  <div class="banner mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url(<%=cl_image_path @products.first.photo.key %>)">
+  <div class="banner-show mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url(<%=cl_image_path @products.first.photo.key %>)">
     <div class="container">
       <h1 class="text-center"><%= @shop.name %></h1>
     </div>
   </div>
 <% else %>
-  <div class="banner mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=cl_image_path "nodisponible" %>)">
+  <div class="banner-show mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=cl_image_path "nodisponible" %>)">
     <div class="container">
-      <h1 class="text-center"><%= @shop.name %></h1>
+      <h1 class=""><%= @shop.name %></h1>
     </div>
   </div>
 <% end %>
 <div class="container">
-  <div class="cards d-flex flex-column justify-content-center">
-    <div >
+  <div class="row justify-content-center">
     <% @products.each do |product| %>
-    <div class="card-product">
-      <%= cl_image_tag product.photo.key, height:350, width:350, crop: :fill %>
-      <div class="card-product-infos d-flex flex-column justify-content-between">
-        <div class="d-flex justify-content-between">
-          <div>
-            <h2><%= product.name %></h2>
-            <p><%= product.description %></p>
-          </div>
-          <div class="d-flex flex-column">
-            <span class="price-product">$ <%= product.previous_price %></span>
-            <span class="offer-product">$<%= product.unit_price %></span>
-          </div>
-        </div>
-        <div class="text-center">
-          <% if current_user.active_cart.nil? %>
-              <%= link_to "Agregar al Carrito", product_cart_items_path(product), method: :POST, class:"btn btn-primary btn-sm rounded"%>
-          <% else %>
-            <% if current_user.active_cart.shop == @shop %>
-              <% if cart_item = current_user.active_cart.cart_items.find { |item| item.product == product } %>
-                <%= link_to "Agregar otro", increase_cart_item_path(cart_item), method: :PATCH, class:"btn btn-primary btn-sm rounded"%>
+      <div class="col-12 col-md-6">
+        <div class="card-product">
+          <%= cl_image_tag product.photo.key, height:350, width:350, crop: :fill %>
+          <div class="card-product-infos d-flex flex-column justify-content-between">
+            <div class="d-flex justify-content-between">
+              <div>
+                <h2><%= product.name %></h2>
+                <p><%= product.description %></p>
+              </div>
+              <div class="d-flex flex-column">
+                <span class="price-product">$ <%= product.previous_price %></span>
+                <span class="offer-product">$<%= product.unit_price %></span>
+              </div>
+            </div>
+            <div class="text-center">
+              <% if current_user.active_cart.nil? %>
+                  <%= link_to "Agregar al Carrito", product_cart_items_path(product), method: :POST, class:"btn btn-primary btn-sm rounded"%>
               <% else %>
-                <%= link_to "Agregar al Carrito", product_cart_items_path(product), method: :POST, class:"btn btn-primary btn-sm rounded"%>
+                <% if current_user.active_cart.shop == @shop %>
+                  <% if cart_item = current_user.active_cart.cart_items.find { |item| item.product == product } %>
+                    <%= link_to "Agregar otro", increase_cart_item_path(cart_item), method: :PATCH, class:"btn btn-primary btn-sm rounded"%>
+                  <% else %>
+                    <%= link_to "Agregar al Carrito", product_cart_items_path(product), method: :POST, class:"btn btn-primary btn-sm rounded"%>
+                  <% end %>
+                <% else %>
+                  <%= link_to "Agregar al Carrito", product_cart_items_path(product), method: :POST, data: { confirm: 'Tu carrito tiene productos de otro shop, si deseas continuar seran removidos!' }, class:"btn btn-primary btn-sm rounded"%>
+                <% end %>
               <% end %>
-            <% else %>
-              <%= link_to "Agregar al Carrito", product_cart_items_path(product), method: :POST, data: { confirm: 'Tu carrito tiene productos de otro shop, si deseas continuar seran removidos!' }, class:"btn btn-primary rounded d-flex justify-content-center"%>
-            <% end %>
-          <% end %>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
     <% end %>
-</div>
+  </div>
+  <%= link_to "Volver", shops_path, class:" btn btn-dark btn-sm"  %>
 </div>
 
 <% if @shop.photo.attached? %>
@@ -56,5 +58,6 @@
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://thumbs.dreamstime.com/b/limpie-el-garage-19656222.jpg)">
     </div>
 <% end %>
+
 
 
