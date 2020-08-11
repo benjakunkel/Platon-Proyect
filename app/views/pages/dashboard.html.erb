@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row"> 
+    <div class="col-12 col-md-6">
+      <h3>Tus pedidos de hoy</h3>
+      <% @carts.each do |cart|%>
+        <div>
+          <h5><%= cart.user.first_name + cart.user.last_name %></h5>
+          <p>productos: </p>
+          <div>
+          <% cart.cart_items.each do |item|%>
+           <%= item.quantity %> - <%= item.product.name %> <%= item.subtotal_price %> 
+          <% end %>
+          <%= cart.price %>
+          </div>
+        </div>
+      <% end %>  
+    </div>
+    <div class="col-12 col-md-6">
+      <h3>Tus productos</h3>
+      <%= link_to "Cargar producto", new_product_path, class:"btn btn-primary btn-block" %>
+      <% @products.each do |product|%>
+        <div>
+          <%= cl_image_tag product.photo.key, height:300, width:300, crop: :fill %>
+          <h5><%=product.name%></h5>
+          <%= link_to "Editar producto", edit_product_path(product), class:"btn btn-primary" %>
+          <%= link_to "Eliminar producto", product_path(product), method: :delete, class:"btn btn-primary" %>
+        </div>
+      <% end %>  
+    </div>
+  </div>
+</div>

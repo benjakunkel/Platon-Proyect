@@ -11,4 +11,9 @@ class PagesController < ApplicationController
   
   def confirmation
   end
+
+  def dashboard
+    @carts = Cart.where(shop_id: current_user.shop.id)
+    @products = Product.where(shop_id: current_user.shop.id)
+  end
 end
