@@ -91,6 +91,25 @@
   }
 }
 
+#banner-index {
+  height: 20vh;
+  opacity: 1;
+  h1 {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  #banner-index {
+    padding: 4rem;
+    height: 35vh;
+    h1 {
+      font-size: 42px;
+    }
+  }
+}
+
+
 // / Small devices (landscape phones, 576px and up)
 // @media (min-width: 576px) { ... }
 // // Medium devices (tablets, 768px and up)
