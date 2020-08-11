@@ -7,7 +7,7 @@ USERS = [
     phone_number: "22154615143",
     password: "12345678",
     role: "admin"
-  },  
+  },
   {
     first_name: "Juan",
     last_name: "Perez",
@@ -62,4 +62,14 @@ USERS = [
     password: "12345678",
     role: "user"
   },
+  {
+    first_name: "Alejandro",
+    last_name: "Flores",
+    email: "flores@mail.com",
+    address: "Azucena Villaflor 550 CABA, Argentina",
+    phone_number: "11694604",
+    password: "12345678",
+    role: "owner"
+  },
+
 ]
