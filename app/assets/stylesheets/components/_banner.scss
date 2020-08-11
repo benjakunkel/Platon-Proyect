@@ -31,11 +31,14 @@
   margin:10px auto;
   padding: 10px;
   max-width: 300px;
-  background-color:#0A978E;
+  background-color: transparent;
   font-family: $headers-font;
   color: white;
   text-decoration: none;
   margin-right: 0px;
+}
+.local{
+  background: $primary;
 }
 .botonn:hover {
   text-decoration: none;
@@ -57,7 +60,7 @@
 
 
 .banner p {
-  font-size: 8px;
+  font-size: 14px;
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(226, 223, 223, 0.2);
@@ -71,18 +74,18 @@
       margin: 0;
     }
     p {
-      font-size: 24px;
+      font-size: 18px;
       margin-top: 20px;
     }
-    height: 610px;
+    height: 60vh;
   }
 
   .botones {
     color: transparent;
     position: relative;
-    top: -250px;
-    align-items: center;
-    justify-content: center;
+    top: -220px;
+    align-items: flex-start;
+    justify-content: flex-start;
     bottom: auto;
     //left: auto;
     // max-width: 100%;
@@ -104,10 +107,28 @@
     color: $primary;
   }
   .titulo{
-    position: relative;
-    top: 100px;
-    bottom: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 55ch;
+    margin-top: 45px;
+    margin-left: 160px;
   }
+  
+  
+  
+  .banner-show {
+    padding: 4rem;
+    height: 50vh;
+    h1 {
+      font-size: 48px;
+
+    }
+    p {
+      font-size: 38px;
+
+    }}
 }
 
 // @media (min-width: 768px) {

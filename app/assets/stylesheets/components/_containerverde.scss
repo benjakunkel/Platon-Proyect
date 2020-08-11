@@ -1,0 +1,29 @@
+.separte {
+  margin-top: 40px;
+}
+.containerverde{
+  height: 900px;
+  background: linear-gradient(to bottom ,#0A978E 40%, rgb(100, 238, 130) 100%);
+  }
+.destacados{
+  position: relative;
+  top: -240px;
+  height: 300px;
+  }
+@media (min-width: 576px) {
+  .containerverde{
+    height: 800px;
+    background: linear-gradient(to bottom ,#0A978E 40%, rgb(100, 238, 130) 100%);
+  }
+  .titulo_div_verde{
+    font-size: 40px;
+  }
+  .parrafo_div_verde{
+    font-weight: bold;
+  }
+  .destacados{
+    position: relative;
+    top: -320px;
+    height: 400px;
+  }
+}

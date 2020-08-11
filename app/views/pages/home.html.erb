@@ -1,6 +1,6 @@
 <%= render 'shared/banner' %>
 
-<div class="container-fluid bg-white p-5 ">
+<div class="container-fluid bg-white separte ">
   <h1 class="text-center pt-5">¡Sé parte del cambio!</h1>
   <div class="row d-flex justify-content-center bg-white width-100 ">
     <div class="exp-card col-6 col-md-4 d-flex justify-content-center bg- rounded">
@@ -26,7 +26,7 @@
     <div class="exp-card col-6 col-md-4 d-flex justify-content-center bg-white rounded">
       <div>
         <div class="d-flex justify-content-center">
-          <%= cl_image_tag("basura", crop: :fill, class:"mt-4 thumbnail") %>
+          <%= cl_image_tag("tercera", crop: :fill, class:"mt-4 thumbnail") %>
         </div>
         <div class="p-2 text-center d-flex justify-content-center">
           <small> Unite a nosotros, disfrutá de nuestros descuentos<br>y salvemos al planeta juntos.</small>
@@ -36,6 +36,7 @@
   </div>
 </div>
 
+<%# LOGROS PLATONICOS %>
 <div class="container-fluid row align-items-center" >
   <div class="col-sm-12 col-md-6">
     <div class="content-box rounded platonicos">
@@ -63,56 +64,61 @@
       </div>
     </div>
   </div>
-  <%# FOTO DE LA MINA CON LAS COMPRASSSSSSSS %>
-  <div class="col-sm-12 col-md-6 pb-4">
+
+<%# FOTO DE LA MINA CON LAS COMPRASSSSSSSS %>
+  <div class="col-sm-12 col-md-6">
     <div class="d-flex justify-content-center"> 
       <%= cl_image_tag("compras", height:500, width:300, class:"waste") %>
     </div>
   </div>
 </div>
-<div class="container-fluid p-4">
+
+<%# COMO PEDIR !!!!!!!!!!! %>
+<div class="container-fluid p-4 containerverde">
   <div class="container pb-4  ">
-    <h1 class="text-center pb-4">¿Cómo pedir?</h1>
+    <h1 class=" titulo_div_verde text-center pb-4 text-white">¿Cómo pedir?</h1>
     <div class="row d-flex justify-content-center">
       <div class="exp-card col-6 col-md-4 d-flex justify-content-center">
         <div>
           <div class="d-flex justify-content-center">
-            <%= cl_image_tag("mapa", crop: :fill, class:"mt-4 thumbnail") %>
+            <%= cl_image_tag("buscarlocal1", crop: :fill, class:"thumbnail") %>
           </div>
           <div>
-            <h4 class="mt-4 text-center">1.Ubicá</h4>
-            <small>Encontrá tus comercios cercanos</small>
+            <h4 class="titulo_div_verde mt-4 text-center text-white">1.Ubicá</h4>
+            <p class="text-white">Encontrá tus comercios cercanos</p>
           </div>
         </div>
       </div>
       <div class="col-6 col-md-4 d-flex justify-content-center exp-card">
         <div>
           <div class="d-flex justify-content-center">
-            <%= cl_image_tag("elegi" , crop: :fill, class:"mt-4 thumbnail") %>
+            <%= cl_image_tag("carritoooo" , crop: :fill, class:"thumbnail") %>
           </div>
           <div>
-            <h4 class="mt-4 text-center">2.Elegí</h4>
-            <small>Seleccioná tus platos favoritos</small>
+            <h4 class=" titulo_div_verde mt-4 text-center text-white">2.Elegí</h4>
+            <p class="text-white">Seleccioná tus platos favoritos</p>
           </div>
         </div>
       </div>
       <div class="col-6 col-md-4 d-flex justify-content-center exp-card">
       <div>
           <div class="d-flex justify-content-center">
-            <%= cl_image_tag("shop",  crop: :fill, class:"mt-4 thumbnail") %>
+            <%= cl_image_tag("shopp",  crop: :fill, class:"thumbnail") %>
           </div>
           <div>
-            <h4 class="mt-4 text-center">3.Retirá</h4>
-            <small>Disfrutá de la mejor comida al mejor precio</small>
+            <h4 class=" titulo_div_verde mt-4 text-center text-white">3.Retirá</h4>
+            <p class="text-white" >Disfrutá de la mejor comida al mejor precio</p>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>  
-<div class="bg-white p-2">
+
+<%# DESTACADOS %>
+<div class="destacados p-2 ">
   <div class="container p-4">
-  <h1 class="text-center pb-4">Restaurants destacados</h1>
+  <h1 class="text-center pb-4 text-white">Restaurants destacados</h1>
     <div class="cards d-flex justify-content-center">
       <% @destacados.each do |shop| %>
       <%= link_to shop_path(shop), class:"card_product" do %>
