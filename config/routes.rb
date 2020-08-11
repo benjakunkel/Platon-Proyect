@@ -2,10 +2,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/pages/confirmation', to: 'pages#confirmation', as: "confirmation"
   devise_for :users
-  resources :shops do
-    resources :products, only: [:new, :create, :show]
-  end
-  resources :product, only: [:update, :edit, :destroy] do
+  get '/dashboard', to: 'pages#dashboard'
+  resources :shops
+  resources :products, only: [:update, :edit, :destroy, :new, :create] do
     resources :cart_items, only: [:create]
   end  
   resources :cart_items, only: [:update, :destroy] do

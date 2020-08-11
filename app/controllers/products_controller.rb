@@ -1,19 +1,19 @@
 class ProductsController < ApplicationController
   
   def show
-    @shop = Shop.find(params[:shop_id])
+    @shop = current_user.shop
     @product = Product.find(params[:id])
     authorize @product
   end
 
   def new
-    @shop = Shop.find(params[:shop_id])
+    @shop = current_user.shop
     @product = Product.new
     authorize @shop
   end
 
   def create
-    @shop = Shop.find(params[:shop_id])
+    @shop = current_user.shop
     @product = Product.new(product_params)
     @product.shop = @shop
     authorize @shop
@@ -28,18 +28,18 @@ class ProductsController < ApplicationController
 
 
   def edit
-    @shop = Shop.find(params[:shop_id])
+    @shop = current_user.shop
     @product = Product.find(params[:id])
     authorize @shop
   end
 
   def update
-    @shop = Shop.find(params[:shop_id])
+    @shop = current_user.shop
     @product = Product.find(params[:id])
     authorize @shop
     if @product.update_attributes(product_params)
       flash[:success] = "Actualizado con exito"
-      redirect_to shop_product_path(@shop,@product)
+      redirect_to dashboard_path(@shop)
     else
       flash[:error] = "Error al Editar, pruebe nuevamente"
       render 'edit'
@@ -47,17 +47,17 @@ class ProductsController < ApplicationController
   end
   
   def destroy
-    @shop = Shop.find(params[:shop_id])
+    @shop = current_user.shop
     @product = Product.find(params[:id])
     authorize @shop
     @product.destroy
-    redirect_to shop_path(@shop)
+    redirect_to dashboard_path(@shop)
   end
 
 private
 
   def product_params
-    params.require(:product).permit(:name, :description, :unit_price, :photo, :previous_price)
+    params.require(:product).permit(:name, :description, :unit_price, :photo, :previous_price, :category)
   end
 
 end

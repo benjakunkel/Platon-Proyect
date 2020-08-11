@@ -10,6 +10,7 @@ SHOPS = [
       {
         name:"Milanesa de pollo",
         description: "Napolitana recien sacada",
+        category: "sanguches",
         previous_price: "250",
         unit_price: "125",
         photo: "https://media-cdn.tripadvisor.com/media/photo-s/16/2f/37/e2/photo0jpg.jpg",
@@ -17,6 +18,7 @@ SHOPS = [
       {
         name:"Sorrentinos Jamon y queso",
         description: "Con tuco y mucho queso, para compartir",
+        category: "pastas",
         previous_price: "185",
         unit_price: "100",
         photo: "https://www.infobae.com/new-resizer/PexE9VwXrp9ih5u7hZP1CHB9D8Q=/1200x900/filters:format(jpg):quality(85)//s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2019/04/28125657/tratoria-napolinata-mar-del-plata-sorrentinos-161.jpg",
@@ -24,6 +26,7 @@ SHOPS = [
       {
         name:"Ñoquis con tuco",
         description: "Porcion grande para 2 personas",
+        category: "pastas",
         previous_price: "280",
         unit_price: "130",
         photo: "https://t2.rg.ltmcdn.com/es/images/4/2/7/img_noquis_de_papa_con_salsa_de_tomate_60724_600.jpg",
@@ -41,6 +44,7 @@ SHOPS = [
       {
         name:"Mix by SushiPop",
         description: "Ultimo Mix del dia super fresco",
+        category: "sushi",
         previous_price: "450",
         unit_price: "245",
         photo: "https://res.cloudinary.com/tf-lab/image/upload/w_656,h_368,c_fill,g_auto:subject,q_auto,f_auto/restaurant/41b58f24-4f2a-45dc-92d3-7fc831616291/5980abde-943d-450f-b806-dca572e26feb.jpg",
@@ -48,6 +52,7 @@ SHOPS = [
       {
         name:"24 Piezas",
         description: "El cliente nunca retiro y te estan esperando!!",
+        category: "sushi",
         previous_price: "500",
         unit_price: "310",
         photo: "https://media-cdn.tripadvisor.com/media/photo-s/18/e4/37/64/combinado-black.jpg",
@@ -55,6 +60,7 @@ SHOPS = [
       {
         name:"40 Piezas",
         description: "El cliente nunca retiro y te estan esperando, para compartir!!",
+        category: "sushi",
         previous_price: "800",
         unit_price: "465",
         photo: "https://latamnoticias.com/wp-content/uploads/2019/05/unnamed-2.jpg",
@@ -72,6 +78,7 @@ SHOPS = [
       {
         name:"Bife de chorizo especial",
         description: "Con guarnición a a elección (Papas Fritas, Puré de papa o ensalada mixta)",
+        category: "asado",
         previous_price: "590",
         unit_price: "365",
         photo: "https://i.pinimg.com/originals/87/11/22/871122c92d629ce58d19c3b2a299306c.jpg",
@@ -79,6 +86,7 @@ SHOPS = [
       {
         name:"Empanadas",
         description: "Nos estan sobrando empanadas de carne cortada a cuchillo y Jamón y queso (C/U)",
+        category: "empanadas",
         previous_price: "100",
         unit_price: "45",
         photo: "https://comidasparaguayas.com/wp-content/uploads/2019/11/empanada-de-carne-paraguaya_700x465.jpg",
@@ -86,6 +94,7 @@ SHOPS = [
       {
         name:"Parrillada para 2 personas",
         description: "Asado, Bondiola, Pollo, Vacío, Morcilla, Chorizo, Chinchulín, Molleja y Riñón Con guarnición a a elección (Papas Fritas, Puré de papa o ensalada mixta)",
+        category: "asado",
         previous_price: "1400",
         unit_price: "850",
         photo: "https://www.circuitogastronomico.com/wp-content/uploads/2019/11/La-Comarca-parrillada-800x600.jpeg",
@@ -103,6 +112,7 @@ SHOPS = [
       {
         name:"Pizza 'Gran New York' ",
         description: "Pizza grande de 8 porciones",
+        category: "pizza",
         previous_price: "650",
         unit_price: "320",
         photo: "https://4.bp.blogspot.com/-_Q3d33pmxJ0/WoyymeCctYI/AAAAAAAAAyI/if4Kwu-Lcy8rn-x4O9SLUtF9t0wq9F74wCLcBGAs/s1600/03.jpg",
@@ -110,6 +120,7 @@ SHOPS = [
       {
         name:"Porcion pizza calabreza ",
         description: "Nos estan sobrando empanadas de carne cortada a cuchillo y Jamón y queso (C/U)",
+        category: "pizza",
         previous_price: "70",
         unit_price: "45",
         photo: "https://2.bp.blogspot.com/-oFvf4hnig2A/WoyynU89rzI/AAAAAAAAAyc/9xUGlG8NRpMT4SuSpa90pk8KaU75i1q8ACEwYBhgL/s1600/04.jpg",
@@ -127,6 +138,7 @@ SHOPS = [
       {
         name:"Caesar con Pollo",
         description: "Uno de nuestros greatest hits",
+        category: "asado",
         previous_price: "450",
         unit_price: "200",
         photo: "https://i.ytimg.com/vi/xaaOAnZRB7Q/maxresdefault.jpg",
@@ -134,6 +146,7 @@ SHOPS = [
       {
         name:"Quinoa Atunada",
         description: "Lomitos de atún + choclo natural + tabule de quínoa y trigo burgol + tomatitos cherries + garbanzos con oliva y pimentón + chauchas, con aderezo de oliva y limón",
+        category: "ensaladas",
         previous_price: "360",
         unit_price: "210",
         photo: "https://www.rico.com.ar/upload/products/103/408x650_DSC_0167_.png?1536725752",
@@ -141,6 +154,7 @@ SHOPS = [
       {
         name:"Porto Cheese Burger",
         description: "Hamburguesa de portobellos y lentejas + queso halloumi + tomatitos + cebollita + ketchup raw (receta única) + aderezo de zanahorias",
+        category: "sanguches",
         previous_price: "500",
         unit_price: "280",
         photo: "https://www.cocinavital.mx/wp-content/uploads/2018/03/hamburguesa-vegana.jpg",
@@ -148,6 +162,7 @@ SHOPS = [
       {
         name:"Gran Mex",
         description: "Bondiola mechada por horas, queso, cilantro, arroz atomatado, pimientos y especias.",
+        category: "sanguches",
         previous_price: "380",
         unit_price: "200",
         photo: "https://rico.com.ar/upload/products/222/408x650_Sandwich_Roll%20Gran%20Mex.png?1591805543",
