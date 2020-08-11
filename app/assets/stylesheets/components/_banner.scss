@@ -31,11 +31,14 @@
   margin:10px auto;
   padding: 10px;
   max-width: 300px;
-  background-color:#0A978E;
+  background-color: transparent;
   font-family: $headers-font;
   color: white;
   text-decoration: none;
   margin-right: 0px;
+}
+.local{
+  background: $primary;
 }
 .botonn:hover {
   text-decoration: none;
@@ -57,7 +60,7 @@
 
 
 .banner p {
-  font-size: 8px;
+  font-size: 14px;
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(226, 223, 223, 0.2);
