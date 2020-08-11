@@ -1,4 +1,5 @@
 class Cart < ApplicationRecord
+  enum delivery_status: {pendiente: 0, entregado: 1}
   belongs_to :user
   belongs_to :shop
   has_many :cart_items, dependent: :destroy
