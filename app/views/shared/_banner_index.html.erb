@@ -1,5 +1,10 @@
 <div class="banner " id="banner-index" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/ayegora/image/upload/v1597091074/rb40gayivgk952nmj0dygqm2gaau.jpg)">
   <div class="container ">
     <h1 class="text-center">Quien comparte su comida no está solo en la vida</h1>
+    <% Product.category_options_for_select.each do |category| %>
+      <%= link_to shops_path(category: category) do %>
+       <%= cl_image_tag( category , height:300, width:300, crop: :fill) %>
+      <% end %>
+    <% end %>
   </div>
 </div>
