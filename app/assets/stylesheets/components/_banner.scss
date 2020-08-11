@@ -4,14 +4,7 @@
   padding: 2rem;
   height: 40vh;
 }
-.banner-show {
-  background-size: cover;
-  background-position: center;
-  padding: 2rem;
-  height: 24vh;
-  display: flex;
-  align-items: center;
-}
+
 .botones {
  position: absolute;
  justify-content: center;
@@ -47,12 +40,6 @@
   text-shadow: 1px 1px 2px white;
   font-size: 24px;
 }
-.banner-show h1 {
-  margin: 0;
-  color: white;
-  text-shadow: 1px 1px 2px white;
-  font-size: 34px;
-}
 
 
 
@@ -74,7 +61,7 @@
       font-size: 24px;
       margin-top: 20px;
     }
-    height: 610px;
+    height: 710px;
   }
 
   .botones {
@@ -134,52 +121,6 @@
 //     width: 50%;
 //   }
 // }
-@media (min-width: 768px) {
-  .banner {
-    padding: 4rem;
-    height: 70vh;
-    h1 {
-      font-size: 48px;
-
-    }
-    p {
-      font-size: 38px;
-
-    }
-  }
-  .banner-show {
-    padding: 4rem;
-    height: 50vh;
-    h1 {
-      font-size: 48px;
-
-    }
-    p {
-      font-size: 38px;
-
-    }
-  }
-
-}
-
-#banner-index {
-  height: 20vh;
-  opacity: 1;
-  h1 {
-    font-size: 16px;
-  }
-}
-
-@media (min-width: 768px) {
-  #banner-index {
-    padding: 4rem;
-    height: 35vh;
-    h1 {
-      font-size: 42px;
-    }
-  }
-}
-
 
 // / Small devices (landscape phones, 576px and up)
 // @media (min-width: 576px) { ... }
