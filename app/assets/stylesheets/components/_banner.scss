@@ -4,7 +4,14 @@
   padding: 2rem;
   height: 40vh;
 }
-
+.banner-show {
+  background-size: cover;
+  background-position: center;
+  padding: 2rem;
+  height: 24vh;
+  display: flex;
+  align-items: center;
+}
 .botones {
  position: absolute;
  top: -58px;
@@ -39,6 +46,12 @@
   text-shadow: 1px 1px 2px white;
   font-size: 34px;
 }
+.banner-show h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 2px white;
+  font-size: 34px;
+}
 
 
 
@@ -65,7 +78,7 @@
     max-width: 100%;
     width: 100%;
     flex-direction: row;
-  }   
+  }
   .botonn {
     border-radius: 50px;
     font-size: 32px;
@@ -82,13 +95,26 @@
     height: 70vh;
     h1 {
       font-size: 48px;
-      
+
     }
     p {
       font-size: 38px;
-     
+
     }
   }
+  .banner-show {
+    padding: 4rem;
+    height: 50vh;
+    h1 {
+      font-size: 48px;
+
+    }
+    p {
+      font-size: 38px;
+
+    }
+  }
+
 }
 
 #banner-index {

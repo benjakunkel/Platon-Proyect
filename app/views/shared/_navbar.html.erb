@@ -35,7 +35,7 @@
         <%# Si el user logeado es OWNER MOSTRA ESTO %>
         <% if current_user.role == "owner"  %>
         <li class="nav-item active">
-           <%= link_to "Agregar Productos", new_shop_product_path(current_user.shop), class: "nav-link" %>
+           <%= link_to "Agregar Productos", new_product_path, class: "nav-link" %>
          </li>
         <% end %>
 
@@ -46,7 +46,7 @@
             <%# Si el user logeado es OWNER MOSTRA ESTO %>
             <% if current_user.role == "owner"  %>
               <%= link_to "Crear Local",  new_shop_path, class: "dropdown-item" %>
-              <%= link_to "Agregar Productos", new_shop_product_path(current_user.shop), class: "dropdown-item" %>
+              <%= link_to "Agregar Productos", new_product_path, class: "dropdown-item" %>
             <% end %>
             <%# ESTO LO VEN TODOS LOS %>
             <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
