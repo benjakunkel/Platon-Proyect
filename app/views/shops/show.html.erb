@@ -12,52 +12,56 @@
   </div>
 <% end %>
 <div class="container">
-  <div class="row justify-content-center">
-    <% @products.each do |product| %>
-      <div class="col-12 col-md-6">
-        <div class="card-product">
-          <%= cl_image_tag product.photo.key, height:350, width:350, crop: :fill %>
-          <div class="card-product-infos d-flex flex-column justify-content-between">
-            <div class="d-flex justify-content-between">
-              <div>
-                <h2><%= product.name %></h2>
-                <p><%= product.description %></p>
-              </div>
-              <div class="d-flex flex-column">
-                <span class="price-product">$ <%= product.previous_price %></span>
-                <span class="offer-product">$<%= product.unit_price %></span>
-              </div>
-            </div>
-            <div class="text-center">
-              <% if current_user.active_cart.nil? %>
-                  <%= link_to "Agregar al Carrito", product_cart_items_path(product), method: :POST, class:"btn btn-primary btn-sm rounded"%>
-              <% else %>
-                <% if current_user.active_cart.shop == @shop %>
-                  <% if cart_item = current_user.active_cart.cart_items.find { |item| item.product == product } %>
-                    <%= link_to "Agregar otro", increase_cart_item_path(cart_item), method: :PATCH, class:"btn btn-primary btn-sm rounded"%>
+<div class="row"> 
+    <div class="col-12 col-md-6">
+      <div class="row justify-content-center">
+        <% @products.each do |product| %>
+          <div class="col-12 col-md-12">
+            <div class="card-product">
+              <%= cl_image_tag product.photo.key, height:350, width:350, crop: :fill %>
+              <div class="card-product-infos d-flex flex-column justify-content-between">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <h2><%= product.name %></h2>
+                    <p><%= product.description %></p>
+                  </div>
+                  <div class="d-flex flex-column">
+                    <span class="price-product">$ <%= product.previous_price %></span>
+                    <span class="offer-product">$<%= product.unit_price %></span>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <% if current_user.active_cart.nil? %>
+                      <%= link_to "Agregar al Carrito", product_cart_items_path(product), method: :POST, class:"btn btn-primary btn-sm rounded"%>
                   <% else %>
-                    <%= link_to "Agregar al Carrito", product_cart_items_path(product), method: :POST, class:"btn btn-primary btn-sm rounded"%>
+                    <% if current_user.active_cart.shop == @shop %>
+                      <% if cart_item = current_user.active_cart.cart_items.find { |item| item.product == product } %>
+                        <%= link_to "Agregar otro", increase_cart_item_path(cart_item), method: :PATCH, class:"btn btn-primary btn-sm rounded"%>
+                      <% else %>
+                        <%= link_to "Agregar al Carrito", product_cart_items_path(product), method: :POST, class:"btn btn-primary btn-sm rounded"%>
+                      <% end %>
+                    <% else %>
+                      <%= link_to "Agregar al Carrito", product_cart_items_path(product), method: :POST, data: { confirm: 'Tu carrito tiene productos de otro shop, si deseas continuar seran removidos!' }, class:"btn btn-primary btn-sm rounded"%>
+                    <% end %>
                   <% end %>
-                <% else %>
-                  <%= link_to "Agregar al Carrito", product_cart_items_path(product), method: :POST, data: { confirm: 'Tu carrito tiene productos de otro shop, si deseas continuar seran removidos!' }, class:"btn btn-primary btn-sm rounded"%>
-                <% end %>
-              <% end %>
+                </div>
+              </div>
             </div>
           </div>
+        <% end %>
+      </div>
+      <%= link_to "Volver", shops_path, class:" btn btn-info btn-md rounded mt-4"  %>
+    </div>
+    <div class="col-12 col-md-6 ">
+      <div class="rounded">
+        <div id="map"
+        style="width: 100%; height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
       </div>
-    <% end %>
-  </div>
-  <%= link_to "Volver", shops_path, class:" btn btn-dark btn-sm rounded mt-4"  %>
-</div>
-
-<% if @shop.photo.attached? %>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0. 3)), url(<%=cl_image_path @shop.photo.key %>)">
-  </div>
-<% else %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://thumbs.dreamstime.com/b/limpie-el-garage-19656222.jpg)">
     </div>
-<% end %>
+</div>    
 
 
 
