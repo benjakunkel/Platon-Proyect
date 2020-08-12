@@ -2,7 +2,7 @@
   background-size: cover;
   background-position: center;
   padding: 2rem;
-  height: 15vh;
+  height: 20vh;
   color:white;
   h1{
     font-size: 20px;
@@ -12,11 +12,15 @@
 
 @media (min-width: 700px) {
   .banner-index {
+    display: flex;
+    align-items: center;
   
-    height: 30vh;
+    height: 40vh;
     h1 {
-      font-size: 32px;
+      font-size: 42px;
       margin: 0;
+      font-weight: bolder;
+      padding-bottom: 5px;
     }
     p {
       font-size: 18px;
