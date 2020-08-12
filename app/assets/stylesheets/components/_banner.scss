@@ -62,7 +62,7 @@
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(226, 223, 223, 0.2);
 }
-@media (min-width: 576px) {
+@media (min-width: 800px) {
   .banner {
     padding: 4rem;
     h1 {
@@ -78,11 +78,11 @@
   .botones {
     color: transparent;
     position: relative;
-    top: -220px;
+    top: -110px;
     align-items: flex-start;
     justify-content: flex-start;
     bottom: auto;
-    left: auto;
+    //left: auto;
     // max-width: 100%;
     // width: 100%;
     flex-direction: row;
@@ -123,15 +123,15 @@
       font-size: 38px;
     }}
 }
- @media (min-width: 800px) {
+ @media (min-width: 1080px) {
   .botones {
     color: transparent;
     position: relative;
-    top: -90px;
+    top: -190px;
     align-items: flex-start;
     justify-content: flex-start;
     bottom: auto;
-    left: auto;
+    // left: auto;
     // max-width: 100%;
     // width: 100%;
     flex-direction: row;
