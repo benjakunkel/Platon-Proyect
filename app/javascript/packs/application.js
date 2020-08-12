@@ -15,11 +15,12 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
-
+import { placesAutocomplete } from '../plugins/algolia';
 import { initMapbox } from '../plugins/init_mapbox';
-
+placesAutocomplete();
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+ 
 })
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
