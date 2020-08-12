@@ -1,1 +1,18 @@
-<%= render 'shared/cart_confirmation' %>
+<div class="container rounded">
+  <div class="jumbotron text-center">
+    <h2 class="display-4">¡ Felicitaciones ! </h2>
+    <% if Cart.last.cart_items.count > 1 %> 
+        <p id="separador"> Salvaste 
+        <strong> <%= Cart.last.cart_items.count %> platones </strong>
+        </p>
+      <% else %>
+        <p> Salvaste 
+        <strong> <%= Cart.last.cart_items.count %> platón</strong>
+        </p>
+    <% end %>
+    <p> Y ahorraste <strong>$ <%= (Cart.last.total/2) %></strong>
+    <p class="lead">
+      <a class="btn btn-primary btn-sm" href="/shops" role="button">Volver al inicio</a>
+    </p>
+  </div>
+</div>
