@@ -27,10 +27,10 @@ skip_before_action :authenticate_user!, only: [ :index ]
   def create
     @shop = Shop.new(shop_params)
     if @shop.save
-      flash[:success] = "Creado con exito"
+      flash[:notice] = "Creado con exito"
       redirect_to @shop
     else
-      flash[:error] = "Fallo"
+      flash[:error] = "Error al crear el comercio"
       render 'new'
     end
     authorize @shop
@@ -44,10 +44,10 @@ skip_before_action :authenticate_user!, only: [ :index ]
   def update
   @shop = Shop.find(params[:id])
     if @shop.update_attributes(shop_params)
-      flash[:success] = "Actualizado con exito"
+      flash[:notice] = "Actualizado con exito"
       redirect_to @shop
     else
-      flash[:error] = "Intenta nuevamente"
+      flash[:notice] = "Intenta nuevamente"
       render 'edit'
     end
     authorize @shop
