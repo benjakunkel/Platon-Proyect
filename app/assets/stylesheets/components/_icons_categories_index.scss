@@ -1,24 +1,35 @@
 
 
 .icon-categories {
-    width: 256px;
+    background-color: #fff;
+    border-radius: 16px;
+    margin-top: -20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    padding: 4px;
+    width: 300px ;
+    overflow-x: scroll;
+   
 }
 
-.single-icon {
-  width: 40px;
-  height: 40px;
+.category-item  {
   text-decoration: none;
-  margin-left: 4px;
-  margin-right: 4px;
-  margin-top: 12px;
+  img {
+    width: 30px;
+    height: 30px;
+    margin-left: 4px;
+    margin-right: 4px;
+    transition: transform .2s ease;
+  }
+  &:hover {
+    text-decoration: none;
+    font-weight: bold;
+    img {
+      transform: scale(1.2);
+    }
 
+  }
 }
 
-.single-icon:hover {
-  width: 50px;
-  height: 50px;
-  text-decoration: none;
-}
 
 #p-icons {
   font-size: 10px;
@@ -30,27 +41,41 @@
 
 
 @media (min-width: 700px) {
+
   .icon-categories {
+    background-color: #fff;
+    border-radius: 16px;
+    margin-top: -50px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    padding: 12px;
     width: auto;
-    height: 100px;
+   overflow-x: hidden;
 }
-  .single-icon {
-    width: 70px;
-    height: 70px;
+  .category-item  {
     text-decoration: none;
-    margin-left: 12px;
-    margin-right: 12px;
-    margin-top: 24px;
-  }
-  #p-icons {
-    text-decoration: none;
-    color: black;
-    margin-bottom: 8px;
-    font-size: 16px !important;
-  }
-  .single-icon:hover {
-    width: 80px;
-    height: 80px;
-    text-decoration: none;
+    img {
+      width: 70px;
+      height: 70px;
+      margin-left: 12px;
+      margin-right: 12px;
+      transition: transform .2s ease;
+    }
+
+    &:hover {
+      text-decoration: none;
+      font-weight: bold;
+      img {
+        transform: scale(1.2);
+      }
+
+    }
+  
+    #p-icons {
+      text-decoration: none;
+      color: black;
+      margin-bottom: 8px;
+      font-size: 16px !important;
+    }
+  
   }
 }
