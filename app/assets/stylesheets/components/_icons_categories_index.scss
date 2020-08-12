@@ -41,9 +41,12 @@
     margin-left: 12px;
     margin-right: 12px;
     margin-top: 24px;
-    #p-icons {
-      text-decoration: none;
-    }
+  }
+  #p-icons {
+    text-decoration: none;
+    color: black;
+    margin-bottom: 8px;
+    font-size: 16px !important;
   }
   .single-icon:hover {
     width: 80px;
