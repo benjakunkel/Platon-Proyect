@@ -13,7 +13,9 @@
        <%= f.input :address,
                     label:"Cambia tu dirección:", 
                     required: false, 
-                    autofocus: true %>
+                    autofocus: true,
+                    input_html: { id: "address-input" }
+                    %>
       <%= f.input :password,
                   label:"Ingresar una nueva contraseña:",
                   hint: "No modifiques nada si no queres cambiarla",
