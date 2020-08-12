@@ -14,14 +14,11 @@
   <%# SI EL USER ESTA CONECTADO LE MUESTRO CERCA TUYO!!  %>
   <% if user_signed_in? %>
     <div class="wrapper_index">
-      <h4 class="text-center pb-2 mt-3">Platos mas cercanos</h4>
+      <h4 class="text-center pb-2 mt-4">Platos mas cercanos</h4>
       <div class="cards_index dragscroll">
         <% @products.each do |product| %>
             <div class="card_product_index">
               <div class="card-img-top position-relative">
-                <div class="heart">
-                  <i class="fas fa-heart"></i>
-                </div>
                 <% if product.photo.attached? %>
                   <%= cl_image_tag product.photo.key, height:300, width:300, crop: :fill %>
                 <% else %>
@@ -29,14 +26,23 @@
                 <% end %>
               </div>
               <div class="p-3">
-              <h4 class="m-0"><%= product.name %> </h4>
-                <div class="rating m-0">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-                </div>
+                <h4 class="m-0"><%= product.name %> </h4>
+              </div>
+               <p class=" m-0 d-flex justify-content-center mb-1"> <i class="fas fa-map-marker" id="icono_localizacion"></i> <%=product.shop.distance_from(current_user) %></p>
+              <div class="text-center">
+                <% if current_user.active_cart.nil? %>
+                    <%= link_to "Agregar al Carrito", product_cart_items_path(product), method: :POST, class:"btn btn-primary btn-block"%>
+                <% else %>
+                  <% if current_user.active_cart.shop == @shop %>
+                    <% if cart_item = current_user.active_cart.cart_items.find { |item| item.product == product } %>
+                      <%= link_to "Agregar otro", increase_cart_item_path(cart_item), method: :PATCH, class:"btn btn-primary btn-block"%>
+                    <% else %>
+                      <%= link_to "Agregar al Carrito", product_cart_items_path(product), method: :POST, class:"btn btn-primary btn-block"%>
+                    <% end %>
+                  <% else %>
+                    <%= link_to "Agregar al Carrito", product_cart_items_path(product), method: :POST, data: { confirm: 'Tu carrito tiene productos de otro shop, si deseas continuar seran removidos!' }, class:"btn btn-primary btn-block"%>
+                  <% end %>
+                <% end %>
               </div>
             </div>
           <% end %>
