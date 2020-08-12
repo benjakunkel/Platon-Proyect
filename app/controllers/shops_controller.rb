@@ -2,8 +2,14 @@ class ShopsController < ApplicationController
 skip_before_action :authenticate_user!, only: [ :index ]
 
   def index
+    @category = params[:category]
+    if @category.present?
+      @products = Product.where(category: @category)
+      @shops = policy_scope(Shop).with_category(@category)
+    else
       @shops = policy_scope(Shop)
       @products = Product.order("RANDOM()").first(10)
+    end
       @destacados = Shop.joins(:products).distinct.select('shops.*, COUNT(products.*) AS products_count').group('shops.id').order("products_count DESC")
   end
 
@@ -21,10 +27,10 @@ skip_before_action :authenticate_user!, only: [ :index ]
   def create
     @shop = Shop.new(shop_params)
     if @shop.save
-      flash[:success] = "Creado con exito"
+      flash[:notice] = "Creado con exito"
       redirect_to @shop
     else
-      flash[:error] = "Fallo"
+      flash[:error] = "Error al crear el comercio"
       render 'new'
     end
     authorize @shop
@@ -38,10 +44,10 @@ skip_before_action :authenticate_user!, only: [ :index ]
   def update
   @shop = Shop.find(params[:id])
     if @shop.update_attributes(shop_params)
-      flash[:success] = "Actualizado con exito"
+      flash[:notice] = "Actualizado con exito"
       redirect_to @shop
     else
-      flash[:error] = "Intenta nuevamente"
+      flash[:notice] = "Intenta nuevamente"
       render 'edit'
     end
     authorize @shop

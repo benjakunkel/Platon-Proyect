@@ -56,16 +56,12 @@
   text-shadow: 1px 1px 2px white;
   font-size: 34px;
 }
-
-
-
 .banner p {
   font-size: 14px;
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(226, 223, 223, 0.2);
 }
-
 @media (min-width: 576px) {
   .banner {
     padding: 4rem;
@@ -79,7 +75,6 @@
     }
     height: 60vh;
   }
-
   .botones {
     color: transparent;
     position: relative;
@@ -123,14 +118,11 @@
     height: 50vh;
     h1 {
       font-size: 48px;
-
     }
     p {
       font-size: 38px;
-
     }}
 }
-
 // @media (min-width: 768px) {
 //   .banner {
 //     padding: 4rem;

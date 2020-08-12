@@ -1,7 +1,13 @@
 <%= render 'shared/banner_index' %>
 <%#= render 'shared/banner' %>
 <div class="bg-white">
-
+<div class="container">
+  <% Product.category_options_for_select.each do |category| %>
+    <%= link_to shops_path(category: category) do %>
+       <%= cl_image_tag( category , height:70, width:70, crop: :fill, class:"rounded") %>
+      <% end %>
+    <% end %>
+</div>
   <%# SI EL USER ESTA CONECTADO LE MUESTRO CERCA TUYO!!  %>
   <% if user_signed_in? %>
     <div class="wrapper_index">

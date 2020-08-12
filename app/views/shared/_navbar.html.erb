@@ -3,9 +3,9 @@
   
   <%= link_to "/shops", class: "nav-link loguito" do %>
     <% if local_assigns[:home] %>
-      <img src="assets/logo.png">
+      <%= cl_image_tag("logo_bikvoh") %>
     <% else %>
-      <img src="assets/logonegro.png">
+      <%= cl_image_tag("logonegro_rkg2il") %>
     <% end %>
   <% end %>
 
