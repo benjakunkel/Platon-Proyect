@@ -10,7 +10,7 @@ SHOPS = [
       {
         name:"Milanesa de pollo",
         description: "Napolitana recien sacada",
-        category: "asado",
+        category: "carnes",
         previous_price: "250",
         unit_price: "125",
         photo: "https://media-cdn.tripadvisor.com/media/photo-s/16/2f/37/e2/photo0jpg.jpg",
@@ -26,7 +26,7 @@ SHOPS = [
       {
         name:"Bondiola de cerdo",
         description: "bondiola de cerdo a la parrilla",
-        category: "asado",
+        category: "carnes",
         previous_price: "380",
         unit_price: "200",
         photo: "https://images.deliveryhero.io/image/pedidosya/products/41514e76-80c5-4ce2-bcab-fedbe98cad9b.jpg?quality=80&width=500",
@@ -80,29 +80,29 @@ SHOPS = [
     address: "Av Santa Fe 1773 CABA, Argentina",
     email: "parrilla@mail.com",
     phone_number: "011-4472-5561",
-    photo: "http://www.airescriollos.com.ar/wp-content/uploads/2017/08/logo1.png",
+    photo: "http://www.airescriollos.com.ar/wp-content/uploads/2014/05/parrilla-recoleta-aires-criollos-570x380.jpg",
     user_id: "",
     products: [
       {
         name:"Bife de chorizo especial",
         description: "Con guarnición a a elección (Papas Fritas, Puré de papa o ensalada mixta)",
-        category: "asado",
+        category: "carnes",
         previous_price: "590",
         unit_price: "365",
         photo: "https://i.pinimg.com/originals/87/11/22/871122c92d629ce58d19c3b2a299306c.jpg",
       },
-      # {
-      #   name:"Empanadas",
-      #   description: "Nos estan sobrando empanadas de carne cortada a cuchillo y Jamón y queso (C/U)",
-      #   category: "empanadas",
-      #   previous_price: "100",
-      #   unit_price: "45",
-      #   photo: "https://comidasparaguayas.com/wp-content/uploads/2019/11/empanada-de-carne-paraguaya_700x465.jpg",
-      # },
+      {
+        name:"Empanadas",
+        description: "Nos estan sobrando empanadas de carne cortada a cuchillo y Jamón y queso (C/U)",
+        category: "empanadas",
+        previous_price: "100",
+        unit_price: "45",
+        photo: "https://comidasparaguayas.com/wp-content/uploads/2019/11/empanada-de-carne-paraguaya_700x465.jpg",
+      },
       {
         name:"Parrillada para 2 personas",
         description: "Asado, Bondiola, Pollo, Vacío, Morcilla, Chorizo, Chinchulín, Molleja y Riñón Con guarnición a a elección (Papas Fritas, Puré de papa o ensalada mixta)",
-        category: "asado",
+        category: "carnes",
         previous_price: "1400",
         unit_price: "850",
         photo: "https://www.circuitogastronomico.com/wp-content/uploads/2019/11/La-Comarca-parrillada-800x600.jpeg",
@@ -117,22 +117,22 @@ SHOPS = [
     photo: "http://www.laceliguia.com/wp/wp-content/uploads/cache/images/boutique-de-pizzas/boutique-de-pizzas-1224967337.jpg",
     user_id: "",
     products: [
-      # {
-      #   name:"Pizza 'Gran New York' ",
-      #   description: "Pizza grande de 8 porciones",
-      #   category: "pizza",
-      #   previous_price: "650",
-      #   unit_price: "320",
-      #   photo: "https://4.bp.blogspot.com/-_Q3d33pmxJ0/WoyymeCctYI/AAAAAAAAAyI/if4Kwu-Lcy8rn-x4O9SLUtF9t0wq9F74wCLcBGAs/s1600/03.jpg",
-      # },
-      # {
-      #   name:"Porcion pizza calabreza ",
-      #   description: "Nos estan sobrando empanadas de carne cortada a cuchillo y Jamón y queso (C/U)",
-      #   category: "pizza",
-      #   previous_price: "70",
-      #   unit_price: "45",
-      #   photo: "https://2.bp.blogspot.com/-oFvf4hnig2A/WoyynU89rzI/AAAAAAAAAyc/9xUGlG8NRpMT4SuSpa90pk8KaU75i1q8ACEwYBhgL/s1600/04.jpg",
-      # },
+      {
+        name:"Pizza 'Gran New York' ",
+        description: "Pizza grande de 8 porciones",
+        category: "pizza",
+        previous_price: "650",
+        unit_price: "320",
+        photo: "https://4.bp.blogspot.com/-_Q3d33pmxJ0/WoyymeCctYI/AAAAAAAAAyI/if4Kwu-Lcy8rn-x4O9SLUtF9t0wq9F74wCLcBGAs/s1600/03.jpg",
+      },
+      {
+        name:"Porcion pizza calabreza ",
+        description: "Nos estan sobrando empanadas de carne cortada a cuchillo y Jamón y queso (C/U)",
+        category: "pizza",
+        previous_price: "70",
+        unit_price: "45",
+        photo: "https://2.bp.blogspot.com/-oFvf4hnig2A/WoyynU89rzI/AAAAAAAAAyc/9xUGlG8NRpMT4SuSpa90pk8KaU75i1q8ACEwYBhgL/s1600/04.jpg",
+      },
     ]
   },
   {
@@ -170,7 +170,7 @@ SHOPS = [
       {
         name:"Merluza a la plancha",
         description: "Merluza a la plancha con guarnicion a eleccion",
-        category: "asado",
+        category: "carnes",
         previous_price: "550",
         unit_price: "450",
         photo: "https://images.deliveryhero.io/image/pedidosya/products/954693-b1d72e2d-dbb5-4153-b8e3-cd2b52705072.jpg?quality=80&width=200",
@@ -198,7 +198,7 @@ SHOPS = [
     address: "Av. Las Heras 2956 CABA, Argentina",
     email: "sushi-club@mail.com",
     phone_number: "0810-222-SUSHI (7874)",
-    photo: "https://www.numeral11.com/wp-content/uploads/2016/10/sushi-club-logo-e1497406187812.jpg",
+    photo: "https://lh5.googleusercontent.com/proxy/pIWJ0O2R6oaN5hqaSsObdbPYt7dbAqj7KlrY3DKuBnz7r6zkUSSelZEoB9yW3ljeh-uu4eS0zueIhPdyRfNtvWz_8NmVofhJ4rumV0EblzrT",
     user_id: "",
     products: [
       {
@@ -232,7 +232,7 @@ SHOPS = [
     address: "Av. Federico Lacroze 2233 CABA, Argentina",
     email: "lacroze@teaconnection.com.ar",
     phone_number: "(5411) 4779-0490",
-    photo: "http://www.teaconnection.com.ar/m/images/img-local-lacroze-interior.jpg",
+    photo: "https://wordpress.nogluten.com.ar/wp-content/uploads/2018/09/69488764_10157685982802340_9158788162653257728_n.jpg",
     user_id: "",
     products: [
       {
@@ -296,7 +296,7 @@ SHOPS = [
       {
         name:"Filet de merluza",
         description: "Filet de merluza con papas hervidas ",
-        category: "asado",
+        category: "carnes",
         previous_price: "360",
         unit_price: "250",
         photo: "https://images.deliveryhero.io/image/pedidosya/products/473654-ee96a924-35fd-417f-8f0a-dea5b866132a.jpg?quality=80&width=500",
@@ -312,7 +312,7 @@ SHOPS = [
       {
         name:"Ojo de Bife",
         description: "Ojo de bife viene con chimichurri",
-        category: "asado",
+        category: "carnes",
         previous_price: "700",
         unit_price: "450",
         photo: "https://images.rappi.com.ar/products/193012-1532461177.png?d=400x400&e=webp",
@@ -380,7 +380,7 @@ SHOPS = [
             {
               name:"Asado de tira",
               description: "Asado de tira con guarnicion a eleccion",
-              category: "asado",
+              category: "carnes",
               previous_price: "485",
               unit_price: "300",
               photo: "https://images.deliveryhero.io/image/pedidosya/products/316505-4fe3ca9c-5433-49be-8721-da3e623658be.jpg?quality=80&width=200",
