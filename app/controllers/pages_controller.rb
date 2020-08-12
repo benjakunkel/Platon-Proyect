@@ -17,6 +17,5 @@ class PagesController < ApplicationController
     @carts = Cart.where(shop_id: current_user.shop.id).pendiente
     @products = Product.where(shop_id: current_user.shop.id)
     @shop = current_user.shop
-  
   end
 end
