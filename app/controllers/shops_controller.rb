@@ -11,12 +11,17 @@ skip_before_action :authenticate_user!, only: [ :index ]
       @products = Product.order("RANDOM()").first(10)
     end
       @destacados = Shop.joins(:products).distinct.select('shops.*, COUNT(products.*) AS products_count').group('shops.id').order("products_count DESC")
+    
   end
 
   def show
     @shop = Shop.find(params[:id])
     authorize @shop
     @products = Product.where(shop_id: @shop.id)
+    @markers = [{lat: @shop.latitude,
+      lng: @shop.longitude,
+      infoWindow: render_to_string(partial: "info_window", locals: { shop: @shop })
+    }]
   end
 
   def new

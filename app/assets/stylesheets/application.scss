@@ -7,6 +7,7 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import 'mapbox-gl/dist/mapbox-gl';
 
 // Your CSS partials
 @import "components/index";
@@ -30,6 +31,7 @@
 @import "components/icons_banner_index";
 @import "components/dashboard";
 @import "components/containerverde";
+@import "components/map";
 
 .btn {
   font-family: $body-font;
