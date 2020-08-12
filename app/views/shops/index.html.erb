@@ -14,7 +14,7 @@
   <%# SI EL USER ESTA CONECTADO LE MUESTRO CERCA TUYO!!  %>
   <% if user_signed_in? %>
     <div class="wrapper_index">
-      <h4 class="text-center pb-2">Platos mas cercanos</h4>
+      <h4 class="text-center pb-2 mt-3">Platos mas cercanos</h4>
       <div class="cards_index dragscroll">
         <% @products.each do |product| %>
             <div class="card_product_index">
