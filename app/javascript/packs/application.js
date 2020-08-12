@@ -17,9 +17,9 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 import { placesAutocomplete } from '../plugins/algolia';
 import { initMapbox } from '../plugins/init_mapbox';
-placesAutocomplete();
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+  placesAutocomplete();
  
 })
 // ----------------------------------------------------
