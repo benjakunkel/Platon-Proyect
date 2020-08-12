@@ -5,7 +5,7 @@
 #creo 1 user
 require_relative "./seeds/users.rb"
 require_relative "./seeds/shops.rb"
- 
+
 
 puts "Dropeando la base de datos"
 CartItem.delete_all
@@ -37,13 +37,13 @@ SHOPS.each_with_index do |shop, index|
 
   shop[:products].each do |product|
     puts "Creando PRODUCTO #{product[:name]} .."
+    puts product[:photo]
     new_product = Product.new(product.except(:photo))
     new_product.photo.attach(io: open(product[:photo]),filename: product[:name])
     new_shop.products << new_product
   end
 
   new_shop.save!
-
 end
 
 puts "Shops creados..."

@@ -71,5 +71,50 @@ USERS = [
     password: "12345678",
     role: "owner"
   },
+  {
+    first_name: "Romeo",
+    last_name: "Santos",
+    email: "santos@mail.com",
+    address: "Tucuman 540 CABA, Argentina",
+    phone_number: "011-154324700",
+    password: "12345678",
+    role: "owner"
+  },
+  {
+    first_name: "Ricardo",
+    last_name: "Enriquez",
+    email: "enriquez@mail.com",
+    address: "Tucuman 540 CABA, Argentina",
+    phone_number: "011-154324700",
+    password: "12345678",
+    role: "owner"
+  },
+  {
+    first_name: "Susana",
+    last_name: "Oria",
+    email: "oria@mail.com",
+    address: "Florida 500 CABA, Argentina",
+    phone_number: "011-15335515",
+    password: "12345678",
+    role: "owner"
+  },
+  {
+    first_name: "Dario",
+    last_name: "Galletta",
+    email: "galletta@mail.com",
+    address: "Av. Gral. Las Heras 2123 CABA, Argentina",
+    phone_number: "011-15258563",
+    password: "12345678",
+    role: "owner"
+  },
+  {
+    first_name: "Alejo",
+    last_name: "Gonzalez",
+    email: "gonzalez@mail.com",
+    address: "Av. Gral. Las Heras 1525 CABA, Argentina",
+    phone_number: "011-15253080",
+    password: "12345678",
+    role: "owner"
+  },
 
 ]
