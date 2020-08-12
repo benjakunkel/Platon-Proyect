@@ -16,10 +16,9 @@
                   required: false,
                   autofocus: true,
                   input_html: { autocomplete: "email" }%>
-      <%= f.input :address, label: "Ingresa tu dirección",
+      <%= f.input :address, input_html: { id: "address-input" }, label: "Ingresa tu dirección",
                   required: false,
-                  autofocus: true,
-                  input_html: {}%>
+                  autofocus: true %>
       <%= f.input :phone_number, label: "Numero de teléfono:",
                   required: false,
                   autofocus: true,

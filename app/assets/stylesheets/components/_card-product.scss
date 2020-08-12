@@ -7,7 +7,7 @@
     display: flex;
     text-align: left;
     min-height: 140px;
-
+ 
   img {
     height: 100%;
     width: 120px;
@@ -53,6 +53,13 @@
     color: white;
   }
 
+}
+.platos{
+  max-height: 650px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: thin;          /* "auto" or "thin"  */
+  scrollbar-color: orange;
 }
 
 @media (min-width: 768px) {
