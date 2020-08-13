@@ -53,7 +53,7 @@
     <div class="wrapper_index">
       <h2 class="text-center pb-4">Locales cercanos</h2>
       <div class="cards_index dragscroll">
-        <% @shops.each do |shop| %>
+        <% @cercanos.each do |shop| %>
           <%= link_to shop_path(shop) do %>
             <div class="card-index-shop">
                 <% if shop.photo.attached? %>
