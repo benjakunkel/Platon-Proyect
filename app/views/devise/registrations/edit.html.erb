@@ -16,6 +16,11 @@
                     autofocus: true,
                     input_html: { id: "address-input" }
                     %>
+      <%= f.input :photo,
+                  required: false,
+                  autofocus: true,
+                  as: :file,
+                  label: "Ingrese foto personal" %>  
       <%= f.input :password,
                   label:"Ingresar una nueva contraseña",
                   hint: "No modifiques nada si no queres cambiarla",

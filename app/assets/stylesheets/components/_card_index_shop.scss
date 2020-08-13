@@ -1,4 +1,4 @@
-.card-product{
+.card-index-shop{
     overflow: hidden;
     height: 120px;
     background: white;
@@ -7,11 +7,24 @@
     display: flex;
     text-align: left;
     min-height: 140px;
+    border-radius: 8px;
+    margin-right: 4px;
+    display: flex;
+    // justify-content: center;
+    align-items: center;
  
+  .rating-shop{
+    color:#f8db84;
+    font-size: 10px;
+  }
+
   img {
     height: 100%;
-    width: 120px;
+    width: 50%;
     object-fit: cover;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius:8px;
+    
   }
 
   h2 {
@@ -20,8 +33,6 @@
     margin: 0;
     justify-content: start;
     max-width: 150px;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   p {
@@ -36,9 +47,20 @@
     text-overflow: ellipsis;
   }
 
-  .card-product-infos {
+  .card-shop-infos {
     flex-grow: 1;
     padding: 16px 4px 16px 16px;
+     width: 300px;
+    display: flex;
+    justify-content: right; 
+    flex-direction: column;
+  
+      .rating-shop {
+        text-align: center;
+      }
+      h4{
+        text-align:center;
+      }
 
   }
   .price-product {
@@ -64,31 +86,54 @@
   scrollbar-color: orange;
 }
 
+
 @media (min-width: 768px) {
-  .card-product{
-    h2{
+  .card-index-shop{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h2 {
       font-size: 24px;
       max-width: 88%;
+      text-align: center;
     }
-    p{
+    p {
       font-size: 16px;
       max-width: 100%;
       max-height: 50px;
-
+      text-align: center;
     }
-    .offer-product{
-      width: 90px;
-      font-size: 17px;
+    .card-shop-infos {
+      width: 500px;
+          .rating-shop {
+            text-align: center;
+          }
+          h4{
+            text-align:center;
+          }
     }
+   
 
     img {
     height: 100%;
-    width: 25%;
+    width: 50%;
     object-fit: cover;
+   
   }
-  max-width: 700px;
+
   min-height: 175px;
 
+  }
+
+}
+
+@media (max-width: 500px) {
+  .card-shop-infos{
+    flex-direction: column;
+   h4{
+     text-align: left;
+   }
   }
 
 }

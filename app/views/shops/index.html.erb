@@ -1,11 +1,12 @@
 <%= render 'shared/banner_index' %>
 <%#= render 'shared/banner' %>
 <div class="bg-white">
-  <div class="d-flex justify-content-center container-fluid">
-    <div class="icon-categories bt-1 d-flex justify-content-around flex-wrap">
+
+  <div class="d-flex justify-content-center container-fluid mb-5 ">
+    <div class="icon-categories bt-1 d-flex justify-content-around ">
       <% Product.category_options_for_select.each do |category| %>
-        <%= link_to shops_path(category: category) do %>
-          <%= cl_image_tag( category , crop: :fill, class:"rounded single-icon") %>
+        <%= link_to shops_path(category: category), class:"category-item" do %>
+          <%= cl_image_tag( category , crop: :fill, class:"rounded") %>
           <p id="p-icons"><%= category.capitalize %></p>
         <% end %>
       <% end %>
@@ -14,7 +15,7 @@
   <%# SI EL USER ESTA CONECTADO LE MUESTRO CERCA TUYO!!  %>
   <% if user_signed_in? %>
     <div class="wrapper_index">
-      <h4 class="text-center pb-2 mt-4">Platos mas cercanos</h4>
+      <h2 class="text-center pb-4">Platos mas cercanos</h2>
       <div class="cards_index dragscroll">
         <% @products.each do |product| %>
             <div class="card_product_index">
@@ -26,21 +27,21 @@
                 <% end %>
               </div>
               <div class="p-3">
-                <h4 class="m-0"><%= product.name %> </h4>
+                <h4 class="m-0 text-center"><%= product.name %> </h4>
               </div>
                <p class=" m-0 d-flex justify-content-center mb-1"> <i class="fas fa-map-marker" id="icono_localizacion"></i> <%=product.shop.distance_from(current_user) %></p>
               <div class="text-center">
                 <% if current_user.active_cart.nil? %>
-                    <%= link_to "Agregar al Carrito", product_cart_items_path(product), method: :POST, class:"btn btn-primary btn-block"%>
+                    <%= link_to "Agregar al Carrito", product_cart_items_path(product), method: :POST, class:"carro btn btn-outline-primary btn-block btn-sm"%>
                 <% else %>
                   <% if current_user.active_cart.shop == @shop %>
                     <% if cart_item = current_user.active_cart.cart_items.find { |item| item.product == product } %>
-                      <%= link_to "Agregar otro", increase_cart_item_path(cart_item), method: :PATCH, class:"btn btn-primary btn-block"%>
+                      <%= link_to "Agregar otro", increase_cart_item_path(cart_item), method: :PATCH, class:"carro btn btn-outline-primary btn-block btn-sm"%>
                     <% else %>
-                      <%= link_to "Agregar al Carrito", product_cart_items_path(product), method: :POST, class:"btn btn-primary btn-block"%>
+                      <%= link_to "Agregar al Carrito", product_cart_items_path(product), method: :POST, class:"carro btn btn-outline-primary btn-block btn-sm"%>
                     <% end %>
                   <% else %>
-                    <%= link_to "Agregar al Carrito", product_cart_items_path(product), method: :POST, data: { confirm: 'Tu carrito tiene productos de otro shop, si deseas continuar seran removidos!' }, class:"btn btn-primary btn-block"%>
+                    <%= link_to "Agregar al Carrito", product_cart_items_path(product), method: :POST, data: { confirm: 'Tu carrito tiene productos de otro shop, si deseas continuar seran removidos!' }, class:" carro btn btn-outline-primary btn-block btn-sm"%>
                   <% end %>
                 <% end %>
               </div>
@@ -50,15 +51,11 @@
     </div>
     <%# Locales cercanos !!  %>
     <div class="wrapper_index">
-      <h4 class="text-center pb-2">Locales cercanos</h4>
+      <h2 class="text-center pb-4">Locales cercanos</h2>
       <div class="cards_index dragscroll">
         <% @shops.each do |shop| %>
           <%= link_to shop_path(shop) do %>
-            <div class="card_product_index">
-              <div class="card-img-top position-relative">
-                <div class="heart">
-                  <i class="fas fa-heart"></i>
-                </div>
+            <div class="card-index-shop">
                 <% if shop.photo.attached? %>
                   <%= cl_image_tag shop.photo.key, height:300, width:300, crop: :fill %>
                 <% else %>
@@ -82,6 +79,7 @@
                 <% end %>
               </div>
                 <p class=" m-0 d-flex justify-content-center"> <i class="fas fa-map-marker" id="icono_localizacion"></i> <%=shop.distance_from(current_user) %></p>
+
               </div>
             </div>
           <% end %>
@@ -93,16 +91,12 @@
 
     <%# DESTACADOS !! ( SE MUESTRA SIEMPRE) %>
     <div class="wrapper_index">
-      <h4 class="text-center pb-2">Destacados</h4>
+      <h2 class="text-center pb-4">Destacados</h2>
       <div class="cards_index dragscroll">
         <% @destacados.each do |shop| %>
           <%= link_to shop_path(shop) do %>
-            <div class="card_product_index">
-              <div class="card-img-top position-relative">
-                <div class="heart">
-                  <i class="fas fa-heart"></i>
-                </div>
-                 <% if shop.photo.attached? %>
+            <div class="card-index-shop">
+                <% if shop.photo.attached? %>
                   <%= cl_image_tag shop.photo.key, height:300, width:300, crop: :fill %>
                 <% else %>
                   <%= cl_image_tag("mojito_baggco", height:300, width:300, crop: :fill) %>

@@ -23,6 +23,11 @@
                   required: false,
                   autofocus: true,
                   input_html: {}%>
+      <%= f.input :photo,
+                  required: false,
+                  autofocus: true,
+                  as: :file,
+                  label: "Ingrese foto personal" %>            
       <%= f.input :password, label: "Ingresa tu contraseña:",
                   required: false,
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),

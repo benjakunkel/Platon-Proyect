@@ -16,7 +16,15 @@
     margin: 12px;
     min-width: 200px;
     max-width: 200px;
+
     }
+    h4 {
+      font-size: 20px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+   
     a {
       text-decoration: none;
       color: unset;
@@ -26,8 +34,11 @@
       text-decoration: none;
       color: unset;
     }
-    h4 {
-      font-size: 20px;
+    .carro {
+      font-size: 18px;
+    }
+    .carro:hover{
+      color:white;
     }
 }
     #icono_localizacion{
@@ -61,6 +72,8 @@
 
       h4{
         font-size: 24px;
+       white-space: nowrap;
+        
       }
       p{
         font-size: 16px;
