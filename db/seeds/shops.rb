@@ -47,7 +47,7 @@ SHOPS = [
     address: "Junín 1242 CABA, Argentina",
     email: "sushi@mail.com",
     phone_number: "011-4821-8131",
-    rating: 3,
+    rating: 4,
     photo: "https://centrofranchising.com/wp-content/uploads/2018/09/sushi-pop-logo.jpg",
     user_id: "",
     products: [
@@ -117,7 +117,7 @@ SHOPS = [
     address: "Calle 10 935 La Plata, Argentina",
     email: "pizza@mail.com",
     phone_number: "221224615143",
-    rating: 4,
+    rating: 3,
     photo: "http://www.laceliguia.com/wp/wp-content/uploads/cache/images/boutique-de-pizzas/boutique-de-pizzas-1224967337.jpg",
     user_id: "",
     products: [
@@ -144,7 +144,7 @@ SHOPS = [
     address: "Diagonal 74 1618 La Plata, Argentina",
     email: "green@mail.com",
     phone_number: "2244415143",
-    rating: 4,
+    rating: 5,
     photo: "https://www.santander.com.ar/banco/wcm/connect/53344df9-7ce5-462c-ae33-a405127db680/img_catalogo_450x435_greeneat.jpg?MOD=AJPERES",
     user_id: "",
     products: [
@@ -203,7 +203,7 @@ SHOPS = [
     address: "Av. Las Heras 2956 CABA, Argentina",
     email: "sushi-club@mail.com",
     phone_number: "0810-222-SUSHI (7874)",
-    rating: 5,
+    rating: 4,
     photo: "https://lh5.googleusercontent.com/proxy/pIWJ0O2R6oaN5hqaSsObdbPYt7dbAqj7KlrY3DKuBnz7r6zkUSSelZEoB9yW3ljeh-uu4eS0zueIhPdyRfNtvWz_8NmVofhJ4rumV0EblzrT",
     user_id: "",
     products: [
