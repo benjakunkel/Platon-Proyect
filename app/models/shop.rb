@@ -19,7 +19,13 @@ class Shop < ApplicationRecord
       return "Direccion no disponible"
     else
       distance = self.distance_to([user.latitude, user.longitude])
-      return (distance < 1) ? "#{(distance * 1000).to_i} metros" : "#{distance.to_i} kilometros"
+      distance_value = (distance < 1) ? (distance * 1000).to_i  : distance.to_i
+      if distance < 1 
+        distance_unit = distance_value == 1 ? "metro": "metros"
+      else
+       distance_unit =  distance_value == 1 ? "kilometro": "kilometros"
+      end
+      return "#{distance_value} #{distance_unit}"
     end
   end
 end
