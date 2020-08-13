@@ -11,7 +11,7 @@ skip_before_action :authenticate_user!, only: [ :index ]
       @products = Product.order("RANDOM()").first(10)
     end
       @destacados = Shop.joins(:products).distinct.select('shops.*, COUNT(products.*) AS products_count').group('shops.id').order("products_count DESC")
-     @cercanos = policy_scope(Shop).near([current_user.latitude, current_user.longitude], 5)
+     @cercanos = policy_scope(Shop).near([current_user.latitude, current_user.longitude], 5) if user_signed_in?
   end
 
   def show
