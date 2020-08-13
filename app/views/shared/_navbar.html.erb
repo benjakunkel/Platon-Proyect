@@ -70,13 +70,14 @@
           <% if current_user.photo.present? %>
             <%= cl_image_tag(current_user.photo.key, :aspect_ratio=>"1:1", :background=>"#262c35", :border=>"5px_solid_rgb:0A978E", :gravity=>"face:center", :radius=>"max", :width=>100, :crop=>"crop", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
           <% else %>
-            <%= cl_image_tag("avatar", :aspect_ratio=>"1:1", :background=>"#262c35", :border=>"5px_solid_rgb:0A978E", :gravity=>"face:center", :radius=>"max", :width=>100, :crop=>"crop", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
+            <%= cl_image_tag("avatar", :radius=>"max", :width=>100, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
           <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%# Si el user logeado es OWNER MOSTRA ESTO %>
             <% if current_user.role == "owner"  %>
               <%= link_to "Agregar Productos", new_product_path, class: "dropdown-item" %>
               <%= link_to "Mi Local",dashboard_path, class: "dropdown-item" %>
+              <%= link_to "Resumen de ventas", summary_path, class:"dropdown-item" %>
 
             <% end %>
             <%# ESTO LO VEN TODOS LOS users %>

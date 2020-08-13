@@ -21,12 +21,18 @@
               <td class="px-2"><%= cart.user.phone_number %></td>
                 <td>
                   <% cart.cart_items.each do |item|%>
-                  <li class="px-2"> <%= item.quantity %> - <%= item.product.name %> </li>
+                  <ul class="px-2"> <%= item.quantity %> - <%= item.product.name %> </ul>
                   <% end %>
                 </td>
                 <td><%= cart.total %></td>
-                <td> 
-                  <%= button_to "Entregar", cart_deliveries_path(cart), class:"btn btn-info m-2" %>
+                <td>
+                <% if cart.delivery_status == "pendiente" %>
+                  <%= simple_form_for cart do |f| %>
+                    <%= f.button :submit, "Confirmar", class:"btn btn-info m-2", required: false %>
+                  <% end %>
+                <% else %>
+                  <p>Entregado</p>
+                <% end %>
                 </td> 
               </tr>
             <% end %>
