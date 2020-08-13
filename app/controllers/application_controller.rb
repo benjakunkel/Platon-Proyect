@@ -7,8 +7,8 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.er
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :address, :phone_number])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :address])  
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :address, :phone_number, :photo])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :address, :photo])  
   end
   
   def skip_pundit?
