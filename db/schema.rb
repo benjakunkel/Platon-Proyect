@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 2020_08_13_125536) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "previous_price"
-    t.string "category"
+    t.integer "category"
     t.index ["shop_id"], name: "index_products_on_shop_id"
   end
 
