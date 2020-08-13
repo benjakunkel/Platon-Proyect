@@ -10,6 +10,13 @@
   top: -240px;
   height: 300px;
   }
+  .explicacion{
+    font-size: 12px;
+  }
+  .pe {
+    font-size: 12px;
+  }
+
 @media (min-width: 576px) {
   .containerverde{
     height: 800px;
@@ -25,5 +32,11 @@
     position: relative;
     top: -320px;
     height: 400px;
+  }
+  .explicacion{
+    font-size: 18px;
+  }
+  .pe {
+    font-size: 20px;
   }
 }

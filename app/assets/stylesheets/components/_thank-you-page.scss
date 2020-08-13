@@ -1,6 +1,10 @@
 .contiene-todo{
   padding: 0;
-  max-width: 70%
+  max-width: 50%;
+  border-radius: 20px;
+}
+p {
+  font-size: 30px;
 }
 
 .contenedor-imagen{
@@ -8,6 +12,8 @@
  background-color: #83CEB3;
  display: flex;
  justify-content: center;
+ border-top-left-radius: 20px;
+ border-top-right-radius: 20px;;
   .check-image{
   max-width: 40%;
   max-height: 40%;

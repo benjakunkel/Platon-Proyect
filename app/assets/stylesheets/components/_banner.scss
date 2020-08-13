@@ -62,6 +62,13 @@
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(226, 223, 223, 0.2);
 }
+
+.titulo{
+  margin-top: -20px;
+  h1{
+    font-weight: lighter;
+  }
+}
 @media (min-width: 700px) {
   .banner {
     padding: 4rem;
@@ -70,7 +77,7 @@
       margin: 0;
     }
     p {
-      font-size: 18px;
+      font-size: 24px;
       margin-top: 20px;
     }
     height: 60vh;
@@ -78,7 +85,7 @@
   .botones {
     color: transparent;
     position: relative;
-    top: -80px;
+    top: -120px;
     align-items: flex-start;
     justify-content: flex-start;
     bottom: auto;
@@ -90,12 +97,13 @@
   
   .botonn {
     border-radius: 50px;
-    font-size: 22px;
+    font-size: 28px;
     min-width: 220px;
     max-width: 10000px;
     font-family: $headers-font;
     padding: 4px 20px;
     background-color: transparent;
+    box-shadow: 2px 2px 2px white;
   }
   .blanco{
     background-color: white;
@@ -106,9 +114,12 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    width: 55ch;
-    margin-top: 45px;
-    margin-left: 160px;
+    width: 58ch;
+    margin-top: 70px;
+    margin-left: 200px;
+    h1{
+      font-size: 58px;
+    }
   }
   
   

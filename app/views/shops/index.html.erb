@@ -15,7 +15,7 @@
   <%# SI EL USER ESTA CONECTADO LE MUESTRO CERCA TUYO!!  %>
   <% if user_signed_in? %>
     <div class="wrapper_index">
-      <h2 class="text-center pb-4">Platones diarios</h2>
+      <h2 class="text-left ml-4 pb-4">Platones diarios</h2>
       <div class="cards_index dragscroll">
         <% @products.each do |product| %>
             <div class="card_product_index">
@@ -28,8 +28,9 @@
               </div>
               <div class="p-3">
                 <h4 class="m-0 text-center"><%= product.name %> </h4>
+                <h6 class="p-1 text-center"><%= product.shop.name %> </h6>
               </div>
-               <p class=" m-0 d-flex justify-content-center mb-1"> <i class="fas fa-map-marker" id="icono_localizacion"></i> <%=product.shop.distance_from(current_user) %></p>
+               <small class="distancia m-0 d-flex justify-content-center mb-1"> <i class="fas fa-map-marker" id="icono_localizacion"></i> <%=product.shop.distance_from(current_user) %></small>
               <div class="text-center">
                 <% if current_user.active_cart.nil? %>
                     <%= link_to "Agregar al Carrito", product_cart_items_path(product), method: :POST, class:"carro btn btn-outline-primary btn-block btn-sm"%>
@@ -51,7 +52,7 @@
     </div>
     <%# Locales cercanos !!  %>
     <div class="wrapper_index">
-      <h2 class="text-center pb-4">Locales cercanos</h2>
+      <h2 class="text-left ml-4 pb-4">Locales cercanos</h2>
       <div class="cards_index dragscroll">
         <% @cercanos.each do |shop| %>
           <%= link_to shop_path(shop) do %>
@@ -89,8 +90,8 @@
 
 
     <%# DESTACADOS !! ( SE MUESTRA SIEMPRE) %>
-    <div class="wrapper_index">
-      <h2 class="text-center pb-4">Destacados</h2>
+    <div class="wrapper_index mb-5">
+      <h2 class="text-left ml-4 pb-4">Destacados</h2>
       <div class="cards_index dragscroll">
         <% @destacados.each do |shop| %>
           <%= link_to shop_path(shop) do %>

@@ -34,8 +34,11 @@
     max-height: 40px;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
 
+  }
+  .distancia{
+    font-weight: 10px;
+  }
   .card-product-infos {
     flex-grow: 1;
     padding: 16px 4px 16px 16px;

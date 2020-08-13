@@ -1,5 +1,5 @@
 
-<div class="contiene-todo container rounded bg-white mt-5 shadow-lg">
+<div class="contiene-todo container bg-white mt-5 shadow-lg">
   <div class="d-flex-column">
     <div class="contenedor-imagen text-center">
       <img src="https://mallaventura.pe/santaanita/wp-content/uploads/sites/2/2019/09/check-verde.png" alt="check" class="check-image">
@@ -7,7 +7,7 @@
     <div class="contenedor-texto text-center ">
       <h3 class="p-3"> Felicitaciones!</h3>
       <% if Cart.last.cart_items.count > 1 %>
-        <p id="separador"> Salvaste
+        <p class="salvado"> Salvaste
           <strong> <%= Cart.last.cart_items.count %> platones </strong>
         </p>
       <% else %>
@@ -17,7 +17,7 @@
       <% end %>
       <p> Y ahorraste  <strong>$ <%= (Cart.last.total/2) %></strong>
       <p class="lead text-center">
-        <a class="botoncitooo btn btn-primary btn-sm" href="/shops" role="button">Volver al inicio</a>
+        <a class="botoncitooo btn btn-primary btn-lg rounded" href="/shops" role="button">Volver al inicio</a>
       </p>
     </div>
   </div>
