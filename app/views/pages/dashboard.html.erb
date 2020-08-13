@@ -46,8 +46,8 @@
       <h3 class="text-center mb-4">Tus productos
         <%= link_to "+ Agregar producto", new_product_path, class:"btn btn-primary  rounded" %>
       </h3>
-    <div class="d-flex flex-column align-items-center ">
-      <% @products.each do |product|%>
+      <div class="d-flex flex-column align-items-center ">
+        <% @products.each do |product|%>
         
           <div class="card-product">
             <%= cl_image_tag product.photo.key, crop: :fill %>
@@ -68,8 +68,8 @@
               </div>
             </div>
           </div>
-       
-      <% end %>  
+        <% end %>  
+      </div>
     </div>
   </div>
 </div>
