@@ -53,7 +53,7 @@
     <div class="wrapper_index">
       <h2 class="text-center pb-4">Locales cercanos</h2>
       <div class="cards_index dragscroll">
-        <% @shops.each do |shop| %>
+        <% @cercanos.each do |shop| %>
           <%= link_to shop_path(shop) do %>
             <div class="card-index-shop">
                 <% if shop.photo.attached? %>
@@ -62,17 +62,23 @@
                   <%= cl_image_tag("mojito_baggco", height:300, width:300, crop: :fill) %>
                 <% end %>
               <div class="card-shop-infos position-relative">
-                
+
                 <h4 class="text-center"><%= shop.name %> </h4>
                   <div class="rating-shop">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
+                    <% if shop.rating.nil? %>
+                      <% 5.times do %>
+                        <i class="far fa-star"></i>
+                      <% end %>
+                    <% else %>
+                      <% shop.rating.times do  %>
+                        <i class="fas fa-star"></i>
+                      <% end %>
+                      <% (5 - shop.rating).times do %>
+                        <i class="far fa-star"></i>
+                      <% end %>
+                    <% end %>
                   </div>
                   <p class=" m-0 d-flex justify-content-center"> <i class="fas fa-map-marker" id="icono_localizacion"></i> <%=shop.distance_from(current_user) %></p>
-                
               </div>
             </div>
           <% end %>
@@ -80,7 +86,7 @@
       </div>
     </div>
   <% end %>
-  
+
 
     <%# DESTACADOS !! ( SE MUESTRA SIEMPRE) %>
     <div class="wrapper_index">
@@ -98,11 +104,18 @@
                 <div>
                 <h4><%= shop.name %> </h4>
                   <div class="rating-shop ">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
+                      <% if shop.rating.nil? %>
+                        <% 5.times do %>
+                          <i class="far fa-star"></i>
+                        <% end %>
+                      <% else %>
+                        <% shop.rating.times do  %>
+                          <i class="fas fa-star"></i>
+                        <% end %>
+                        <% (5 - shop.rating).times do %>
+                          <i class="far fa-star"></i>
+                        <% end %>
+                      <% end %>
                   </div>
                   <p class=" m-0 d-flex justify-content-center"> <i class="fas fa-map-marker" id="icono_localizacion"></i> <%=shop.address.first(25) %></p>
                 </div>
@@ -111,6 +124,6 @@
           <% end %>
         <% end %>
       </div>
-    </div> 
+    </div>
 
 </div>

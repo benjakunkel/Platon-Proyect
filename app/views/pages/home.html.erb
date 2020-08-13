@@ -67,7 +67,7 @@
 
 <%# FOTO DE LA MINA CON LAS COMPRASSSSSSSS %>
   <div class="col-sm-12 col-md-6">
-    <div class="d-flex justify-content-center"> 
+    <div class="d-flex justify-content-center">
       <%= cl_image_tag("compras", height:500, width:300, class:"waste") %>
     </div>
   </div>
@@ -113,7 +113,7 @@
       </div>
     </div>
   </div>
-</div>  
+</div>
 
 <%# DESTACADOS %>
 <div class="destacados p-2 ">
@@ -134,11 +134,18 @@
         </div>
         <div class="p-3">
           <div class="rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
+            <% if shop.rating.nil? %>
+              <% 5.times do %>
+                <i class="far fa-star"></i>
+              <% end %>
+            <% else %>
+              <% shop.rating.times do  %>
+                <i class="fas fa-star"></i>
+              <% end %>
+              <% (5 - shop.rating).times do %>
+                <i class="far fa-star"></i>
+              <% end %>
+            <% end %>
           </div>
           <h4><%= shop.name %></h4>
           <p class="small m-0"><%= shop.address %></p>

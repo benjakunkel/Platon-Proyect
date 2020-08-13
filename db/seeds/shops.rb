@@ -4,6 +4,7 @@ SHOPS = [
     address: "Calle 47 760 La Plata, Argentina",
     email: "trattoria@mail.com",
     phone_number: " 0221-422-6135",
+    rating: 4,
     photo: "https://fastly.4sqi.net/img/general/600x600/10642071_qUHgRuywQMdc7XeAlqj2dmr-5nEMc1FTXd2ey-ravHE.jpg",
     user_id: "",
     products: [
@@ -46,6 +47,7 @@ SHOPS = [
     address: "Junín 1242 CABA, Argentina",
     email: "sushi@mail.com",
     phone_number: "011-4821-8131",
+    rating: 4,
     photo: "https://centrofranchising.com/wp-content/uploads/2018/09/sushi-pop-logo.jpg",
     user_id: "",
     products: [
@@ -80,6 +82,7 @@ SHOPS = [
     address: "Av Santa Fe 1773 CABA, Argentina",
     email: "parrilla@mail.com",
     phone_number: "011-4472-5561",
+    rating: 3,
     photo: "http://www.airescriollos.com.ar/wp-content/uploads/2014/05/parrilla-recoleta-aires-criollos-570x380.jpg",
     user_id: "",
     products: [
@@ -114,6 +117,7 @@ SHOPS = [
     address: "Calle 10 935 La Plata, Argentina",
     email: "pizza@mail.com",
     phone_number: "221224615143",
+    rating: 3,
     photo: "http://www.laceliguia.com/wp/wp-content/uploads/cache/images/boutique-de-pizzas/boutique-de-pizzas-1224967337.jpg",
     user_id: "",
     products: [
@@ -140,6 +144,7 @@ SHOPS = [
     address: "Diagonal 74 1618 La Plata, Argentina",
     email: "green@mail.com",
     phone_number: "2244415143",
+    rating: 5,
     photo: "https://www.santander.com.ar/banco/wcm/connect/53344df9-7ce5-462c-ae33-a405127db680/img_catalogo_450x435_greeneat.jpg?MOD=AJPERES",
     user_id: "",
     products: [
@@ -198,6 +203,7 @@ SHOPS = [
     address: "Av. Las Heras 2956 CABA, Argentina",
     email: "sushi-club@mail.com",
     phone_number: "0810-222-SUSHI (7874)",
+    rating: 4,
     photo: "https://lh5.googleusercontent.com/proxy/pIWJ0O2R6oaN5hqaSsObdbPYt7dbAqj7KlrY3DKuBnz7r6zkUSSelZEoB9yW3ljeh-uu4eS0zueIhPdyRfNtvWz_8NmVofhJ4rumV0EblzrT",
     user_id: "",
     products: [
@@ -232,6 +238,7 @@ SHOPS = [
     address: "Av. Federico Lacroze 2233 CABA, Argentina",
     email: "lacroze@teaconnection.com.ar",
     phone_number: "(5411) 4779-0490",
+    rating: 5,
     photo: "https://wordpress.nogluten.com.ar/wp-content/uploads/2018/09/69488764_10157685982802340_9158788162653257728_n.jpg",
     user_id: "",
     products: [
@@ -282,6 +289,7 @@ SHOPS = [
     address: "Av Rivadavia 2183 CABA, Argentina",
     email: "bella-gamba@mail.com",
     phone_number: "11-4574333",
+    rating: 4,
     photo: "https://img.guiaoleo.com.ar/unsafe/938x528/filters:fill(green)/photo_7535_1.jpg-fdd4cd36-f4e4-11e4-be7b-d3500e263ce1_s0.jpg",
     user_id: "",
     products: [
@@ -332,6 +340,7 @@ SHOPS = [
     address: "Av. Lope de Vega 1864 CABA, Argentina",
     email: "elcondor@mail.com",
     phone_number: "+541145670493",
+    rating: 3,
     photo: "https://10619-2.s.cdn12.com/rests/original/102_503528697.jpg",
     user_id: "",
     products: [
@@ -366,6 +375,7 @@ SHOPS = [
     address: "Maipu 529 CABA, Argentina",
     email: "elcapataz@mail.com",
     phone_number: "+54114573331",
+    rating: 2,
     photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS4yeOys3afvidpZ8gA2VfaLZzZcuJDNFhTzw&usqp=CAU",
     user_id: "",
     products: [
@@ -400,6 +410,7 @@ SHOPS = [
     address: "Paraguay 1399 CABA, Argentina",
     email: "laargentina@mail.com",
     phone_number: "11-4519-8522",
+    rating: 5,
     photo: "http://clargentina.com.ar/img/nos02.jpg",
     user_id: "",
     products: [

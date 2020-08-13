@@ -1,11 +1,19 @@
-<h1>Products#edit</h1>
-<p>Find me in app/views/products/edit.html.erb</p>
+<div class="container bg-white rounded mt-5 pb-4 shadow-lg">
+  <h2 class=" p-3"> Edita tus productos</h2>
 
-<%= simple_form_for [@product] do |f| %>
-<%= f.input :name, label:"Nombre:", required: false %>
-<%= f.input :category, collection: Product.category_options_for_select, label:"Categoria:", required: false %>
-<%= f.input :description, label:"Descripcion:", required: false %>	 
-<%= f.input :unit_price, label:"Precio unitario:", required: false %>
-<%= f.button :submit, label:"Agregar", class: "btn btn-outline-dark" %>
-<%= f.input :photo, as: :file, label:"Agregá una imagen:", required: false %>
-<% end %>
+  <%= simple_form_for [@product] do |f| %>
+  <div class="form-inputs">
+    <%= f.input :name, label:"Nombre:", required: false %>
+    <%= f.input :category, collection: Product.category_options_for_select, label:"Categoria:", required: false %>
+    <%= f.input :description, label:"Descripcion:", required: false %>
+    <%= f.input :unit_price, label:"Precio unitario:", required: false %>
+    <%= f.input :photo, as: :file, label:"Agregá una imagen:", required: false %>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, "Edita producto", class: "btn btn-primary" %>
+  </div>
+  <% end %>
+
+
+</div>
+<%= link_to "Volver", dashboard_path, class: "btn btn-outline-dark btn-sm m-4" %>
