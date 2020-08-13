@@ -1,0 +1,24 @@
+.contiene-todo{
+  padding: 0;
+  max-width: 70%
+}
+
+.contenedor-imagen{
+ min-height: 30vh;
+ background-color: #83CEB3;
+ display: flex;
+ justify-content: center;
+  .check-image{
+  max-width: 40%;
+  max-height: 40%;
+  }
+}
+
+.contenedor-texto{
+  padding-top: 20px;
+  min-height: 30vh;
+}
+.botoncitooo{
+  background-color: #83CEB3;
+  border: 0px;
+}
