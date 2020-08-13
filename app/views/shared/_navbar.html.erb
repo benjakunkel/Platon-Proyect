@@ -68,7 +68,7 @@
         <%# DROPDOWN %>
         <li class="nav-item dropdown">
           <% if current_user.photo.present? %>
-            <%= cl_image_tag(current_user.photo.key, :aspect_ratio=>"1:1", :background=>"#262c35", :border=>"5px_solid_rgb:0A978E", :gravity=>"face:center", :radius=>"max", :width=>100, :crop=>"crop", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
+            <%= cl_image_tag(current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
           <% else %>
             <%= cl_image_tag("avatar", :radius=>"max", :width=>100, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
           <% end %>
