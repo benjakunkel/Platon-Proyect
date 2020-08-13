@@ -57,7 +57,7 @@ USERS = [
     first_name: "Hidalgo",
     last_name: "García",
     email: "garcia@mail.com",
-    address: "Gral Pinto 1041 Tandil, Argentina",
+    address: "Tucuman 540 CABA, Argentina",
     phone_number: "45135432165",
     password: "12345678",
     role: "user"
