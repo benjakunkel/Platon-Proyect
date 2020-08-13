@@ -55,9 +55,9 @@
       <%= link_to "Volver", shops_path, class:" btn btn-info btn-md rounded mt-4"  %>
     </div>
     <div class="col-12 col-md-6 ">
-      <div class="rounded">
+      <div class="rounded h-100">
         <div id="map"
-        style="width: 100%; height: 600px;"
+        style="width: 100%; height: 100%;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
