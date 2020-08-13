@@ -1,14 +1,19 @@
-<div class="container bg-white rounded mt-5 p-4 shadow-sm" id="new-product">
-  <h3 class="py-3">Nuevo Producto</h3>
+<div class="container bg-white rounded mt-5 p-4 shadow-lg">
+  <h3 class="p-3">Agrega nuevo producto</h3>
 
   <%= simple_form_for [@product] do |f| %>
-  <%= f.input :name, label:"Nombre:", required: false %>
-  <%= f.input :category, collection: Product.category_options_for_select, label:"Categoria:", required: false %>
-  <%= f.input :description, label:"Descripcion:", required: false %>
-  <%= f.input :previous_price, label:"Precio anterior:", required: false %>
-  <%= f.input :unit_price, label:"Precio actual:", required: false%>
-  <%= f.input :photo, as: :file, label:"Agregá una imagen:", required: false %>
-  <%= f.button :submit, "Agregar", class: "btn btn-primary" %>
-  <% end %>
+  <div class="form-inputs">
+    <%= f.input :name, label:"Nombre:", required: false %>
+    <%= f.input :category, collection: Product.category_options_for_select, label:"Categoria:", required: false %>
+    <%= f.input :description, label:"Descripcion:", required: false %>
+    <%= f.input :previous_price, label:"Precio anterior:", required: false %>
+    <%= f.input :unit_price, label:"Precio actual:", required: false%>
+    <%= f.input :photo, as: :file, label:"Agregá una imagen:", required: false %>
   </div>
+  <div class="form-actions">
+    <%= f.button :submit, "Agregar", class: "btn btn-primary" %>
+  </div>
+  <% end %>
+
 </div>
+<%= link_to "Volver", dashboard_path, class: "btn btn-outline-dark btn-sm m-4" %>
