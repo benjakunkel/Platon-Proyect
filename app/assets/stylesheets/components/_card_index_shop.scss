@@ -9,9 +9,8 @@
     min-height: 140px;
     border-radius: 8px;
     margin-right: 4px;
-    height: 100px;
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
  
   .rating-shop{
@@ -22,8 +21,6 @@
   img {
     height: 100%;
     width: 50%;
-    object-fit: cover;
-    
     object-fit: cover;
     border-top-left-radius: 8px;
     border-bottom-left-radius:8px;
@@ -53,6 +50,17 @@
   .card-shop-infos {
     flex-grow: 1;
     padding: 16px 4px 16px 16px;
+     width: 300px;
+    display: flex;
+    justify-content: right; 
+    flex-direction: column;
+  
+      .rating-shop {
+        text-align: center;
+      }
+      h4{
+        text-align:center;
+      }
 
   }
   .price-product {
@@ -78,6 +86,7 @@
   scrollbar-color: orange;
 }
 
+
 @media (min-width: 768px) {
   .card-index-shop{
     height: 200px;
@@ -87,16 +96,24 @@
     h2 {
       font-size: 24px;
       max-width: 88%;
+      text-align: center;
     }
     p {
       font-size: 16px;
       max-width: 100%;
       max-height: 50px;
-
+      text-align: center;
     }
     .card-shop-infos {
-    width: 500px;
+      width: 500px;
+          .rating-shop {
+            text-align: center;
+          }
+          h4{
+            text-align:center;
+          }
     }
+   
 
     img {
     height: 100%;
@@ -107,6 +124,16 @@
 
   min-height: 175px;
 
+  }
+
+}
+
+@media (max-width: 500px) {
+  .card-shop-infos{
+    flex-direction: column;
+   h4{
+     text-align: left;
+   }
   }
 
 }
