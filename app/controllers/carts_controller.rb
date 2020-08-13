@@ -16,8 +16,14 @@ class CartsController < ApplicationController
   def update
     @cart = Cart.find(params[:id])
     authorize @cart
-    @cart.update(submited_at: Time.current)
-    redirect_to confirmation_path
+    if @cart.shop.user_id == current_user.id
+      @cart.update(delivery_status: 1) 
+      redirect_to dashboard_path
+      return
+    else
+      @cart.update(submited_at: Time.current)
+      redirect_to confirmation_path
+    end  
   end
 
 end

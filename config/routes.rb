@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/pages/confirmation', to: 'pages#confirmation', as: "confirmation"
   devise_for :users
   get '/dashboard', to: 'pages#dashboard'
+  get '/summary', to: 'pages#summary'
   resources :shops
   resources :products, only: [:update, :edit, :destroy, :new, :create] do
     resources :cart_items, only: [:create]

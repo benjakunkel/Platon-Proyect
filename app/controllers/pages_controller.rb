@@ -18,4 +18,10 @@ class PagesController < ApplicationController
     @products = Product.where(shop_id: current_user.shop.id)
     @shop = current_user.shop
   end
+
+  def summary
+    @carts = Cart.where(shop_id: current_user.shop.id).entregado
+    @products = Product.where()
+    @shop = current_user.shop
+  end
 end
