@@ -1,16 +1,17 @@
-<div class="banner " style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://res.cloudinary.com/ayegora/image/upload/v1597183115/banner_tu2wcu.png)">
-  <div class="titulo">
-        <h1> <strong> La buena comida hay que probarla, no tirarla. </strong> </h1>
-        <p>Vinimos para ayudarte a ahorrar más y contaminar menos.</p>
+<div class="d-flex align-items-end align-items-md-center px-0 px-md-5 pb-3" style="height:60vh; background-size:cover; background-image: linear-gradient(-270deg, rgba(0,0,0,0.4),rgba(255,255,255,0.1)), url(https://res.cloudinary.com/ayegora/image/upload/v1597183115/banner_tu2wcu.png)">
+   <div class="d-flex justify-content-center justify-content-md-start">
+      <div class="mx-0 mx-md-5 w-100 w-sm-50 w-md-25">
+        <h1 class="text-center text-md-left m-0 text-white mb-4 mb-md-4"><strong> La buena comida hay que probarla, no tirarla. </strong></h1>
+        <p class="h5 text-center text-md-left font-weight-lighter text-white mb-5 mb-md-4">Vinimos para ayudarte a ahorrar más y contaminar menos.</p>
+        <div class="d-flex flex-column flex-md-row px-4 p-md-0"> 
+          <%= link_to "Explorá Platón", shops_path,  class:"bg-white px-2 p-1 py-md-3 px-md-4 border-primary rounded-pill text-center m-0 mb-1 mb-md-0 mr-md-3 mt-5 mt-md-0 h5 text-decoration-none"%>
+          <%= link_to "Registá tu local", shops_path,  class:"bg-primary d-none d-md-block px-2 p-1 py-md-3 px-md-4 border-white text-white rounded-pill text-center m-0 mr-md-3 h5 text-decoration-none", data: { toggle:"modal", target:"#exampleModal" } %>
+        </div>
       </div>
-  </div>
-<div class="position-relative">
-  <div class="botones d-flex">
-    <%= link_to "Explorá Platón", shops_path,  class:"blanco mx-4 botonn text-center"%>
-  <button type="button" class="local mx-4  botonn text-center" data-toggle="modal" data-target="#exampleModal">
-    Registra tu local
-  </button>
-  </div>
+   </div>
+</div>
+
+      <%= link_to "Registá tu local", shops_path,  class:"bg-primary d-block d-md-none px-2 p-1 p-md-3 border-white text-white rounded-pill text-center mt-3 mx-3 mr-md-3 h5 text-decoration-none", data: { toggle:"modal", target:"#exampleModal" } %>
 
 
   <%# MODAL!!!!!!!!!!!!!!!!!!!! %>
@@ -50,5 +51,3 @@
       </div>
     </div>
   </div>
-</div>
-</div>
