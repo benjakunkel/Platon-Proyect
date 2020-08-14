@@ -18,7 +18,7 @@
       <h2 class="text-left ml-4 ">Platones diarios</h2>
       <div class="cards_index dragscroll">
         <% @products.each do |product| %>
-            <div style="height: 400px; min-width:300px; max-width:300px;" class="mr-3 d-flex flex-column border rounded shadow">
+            <div style="height: 400px; min-width:350px; max-width:350px;" class="mr-3 d-flex flex-column border rounded shadow">
               <% if product.photo.attached? %>
                 <div style="background-image: url(<%= cl_image_path(product.photo.key) %>); background-size: cover; object-fit: cover;" class=" rounded flex-grow-1  position-relative" >
               <% else %>
@@ -40,8 +40,8 @@
             </div>
             <div class="flex-grow-0 p-3">
               <h2 class="m-0 h4 text-center"> <%= product.name %></h2>
-              <h3 class="text-center m-0 h6 text-uppercase text-primary mt-1 "> <%= product.shop.name.truncate(20, separator: ' ') %></h3>
-              <p class="m-0 mt-3 h6 font-weight-light text-center"> <%= product.description.truncate(20) %></p>
+              <h3 class="text-center m-0 h6 text-uppercase text-primary mt-1 "> <%= product.shop.name.truncate(20, separator: '') %></h3>
+              <p class="m-0 mt-3 h6 font-weight-light text-center"> <%= product.description.truncate(35) %></p>
                 <div class="d-flex justify-content-between mt-3">
                   <div class="d-flex align-items-center">
                     <span class="font-weight-bold mr-1"> <%= rand(3..5) %>.0</span>
