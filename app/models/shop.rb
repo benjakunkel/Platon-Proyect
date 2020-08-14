@@ -21,9 +21,9 @@ class Shop < ApplicationRecord
       distance = self.distance_to([user.latitude, user.longitude])
       distance_value = (distance < 1) ? (distance * 1000).to_i  : distance.to_i
       if distance < 1 
-        distance_unit = distance_value == 1 ? "metro": "metros"
+        distance_unit = distance_value == 1 ? "mt": "mts"
       else
-       distance_unit =  distance_value == 1 ? "kilometro": "kilometros"
+       distance_unit =  distance_value == 1 ? "km": "kms"
       end
       return "#{distance_value} #{distance_unit}"
     end
